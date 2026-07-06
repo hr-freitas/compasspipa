@@ -14,15 +14,16 @@
       font-weight: 400;                                    /* Normal text */
       margin: 0;                                           /* Removed default margin for better layout control */
       background: #f7f6f6;                               /* Changed background color to a light gray for better contrast */
+      display: flex;                                        /* Use flexbox for layout */
       padding-top: 80px;                                   /* Added padding to the top to prevent content from being hidden behind the header */
     }
 
     html, body {
-    min-height: 100vh;       /* ocupa 100% da altura da viewport */
-    /* margin: 0;           /* remove margens padrão */
-    display: flex;       /* usa flexbox para layout */
-    overflow: hidden;    /* impede rolagem */
-    flex-direction: column;  /* organiza elementos em coluna */
+      min-height: 100vh;          /* ocupa 100% da altura da viewport */
+      margin: 0;               /* remove margens padrão */
+      display: flex;              /* usa flexbox para layout */
+      /*overflow: hidden;           /* impede rolagem */
+      flex-direction: column;     /* organiza elementos em coluna */
     }
 
     h1, h2, h3 {
@@ -35,7 +36,8 @@
 
     main {
       flex: 1;
-      /* padding: 20px; */
+      padding: 20px;
+      padding-bottom: 100px;                                       /* Added padding to the bottom to prevent content from being hidden behind the footer */
     }
     header {
       background: #006491;                               /* Changed header background color to a more vibrant orange */
@@ -149,7 +151,7 @@
       position: fixed;                                        /* fica fixo na tela */
       bottom: 20px;                                           /* distância da borda inferior */
       right: 20px;                                            /* distância da borda direita */
-      z-index: 1000;                                          /* fica acima dos outros elementos */
+      z-index: 2000;                                          /* fica acima dos outros elementos */
     }
 
     .whatsapp-button img {
@@ -170,10 +172,18 @@
       color: #fff;
       display: flex;
       flex-direction: row;                                    /* força horizontal */
-      justify-content: space-between;                         /* distribui esquerda, centro e direita */
+      justify-content: flex-start;                         /* distribui esquerda, centro e direita */
       align-items: flex-start;                                /* alinha ao topo */
       padding: 20px 10%;
       border-top: 2px solid #ddd;                           /* linha separadora acima */
+
+
+      position: fixed;   /* fixa na tela */
+      bottom: 0;         /* cola na borda inferior */
+      left: 0;
+      width: 100%;       /* ocupa toda a largura */
+      z-index: 1000;     /* fica acima dos outros elementos */
+      gap: 250px;          /* espaço entre os blocos */
     }
 
     footer div {
@@ -382,11 +392,14 @@
     <img src="icons/pix-icone.png" alt="Pix">
     <img src="icons/cash.png" alt="Cash">
   </div>
+
+  <div class="footer-creditos">Desenvolvido por hr.freitas</div>
+
 </footer>
 
-<div class="footer-creditos">
+<!--<div class="footer-creditos">
   Desenvolvido por hr.freitas
-</div>
+</div>*-->
 
 </body>
 </html>

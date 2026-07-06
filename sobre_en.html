@@ -149,7 +149,7 @@
       position: fixed;                                        /* fica fixo na tela */
       bottom: 20px;                                           /* distância da borda inferior */
       right: 20px;                                            /* distância da borda direita */
-      z-index: 1000;                                          /* fica acima dos outros elementos */
+      z-index: 2000;                                          /* fica acima dos outros elementos */
     }
 
     .whatsapp-button img {
@@ -170,10 +170,17 @@
       color: #fff;
       display: flex;
       flex-direction: row;                                    /* força horizontal */
-      justify-content: space-between;                         /* distribui esquerda, centro e direita */
+      justify-content: flex-start;                         /* distribui esquerda, centro e direita */
       align-items: flex-start;                                /* alinha ao topo */
       padding: 20px 10%;
       border-top: 2px solid #ddd;                           /* linha separadora acima */
+
+      position: fixed;   /* fixa na tela */
+      bottom: 0;         /* cola na borda inferior */
+      left: 0;
+      width: 100%;       /* ocupa toda a largura */
+      z-index: 1000;     /* fica acima dos outros elementos */
+      gap: 250px;          /* espaço entre os blocos */
     }
 
     footer div {
@@ -385,9 +392,9 @@
   </div>
 </footer>
 
-<div class="footer-creditos">
+<!--<div class="footer-creditos">
   Developed by hr.freitas
-</div>
+</div>-->
 
 </body>
 </html>
