@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="BR-pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/contact.css">
+    <link rel="icon" type="image/png" href="icons/logo1.png">
+  <style>
+    /* Botão do WhatsApp */
+    .whatsapp-button {
+    position: fixed;                                                  /* fica fixo na tela */
+    top: 70px;                                                        /* distância da borda inferior */
+    right: 20px;                                                      /* distância da borda direita */
+    z-index: 1000;                                                    /* fica acima dos outros elementos */
+    }
+    .whatsapp-button img {
+    width: 40px;                                                      /* tamanho do ícone */
+    height: 40px;
+    border-radius: 50%;                                               /* deixa o ícone redondo */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);                          /* sombra suave */
+    transition: transform 0.3s ease;
+    }
+    .whatsapp-button img:hover {
+      transform: scale(1.1);  /* efeito de zoom ao passar o mouse */
+    }
+
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    margin-right: 20px;
+    margin-top: -5px;
+
+    margin: 0 0 10px 0; /* margem inferior para espaçamento */
+  }
+
+  .menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+  }
+
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #006491;
+    position: absolute;
+    top: 50px; /* altura do header */
+    right: 0;
+    width: 100%;
+
+    flex: 0 0 auto;
+  }
+
+  nav a {
+    text-align: center;
+    padding: 12px 0;
+    border-top: 1px solid #36b3ec;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav.show {
+    display: flex;
+  }
+}
+  </style>
+  </head>
+  <body>
+    <header>
+  <div class="logo">
+    <img src="icons/logo1.png" alt="Logo" />
+  </div>
+
+  <!-- Botão hamburger -->
+  <div class="menu-toggle" id="menuToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Agrupamento menu + bandeiras -->
+  <div class="header-right">
+    <div class="nav-wrapper"></div>
+    <nav id="navMenu">
+      <a href="" class="active">Home</a>
+      <a href="passeios.html">Passeios</a>
+      <a href="transporte.html">Transporte</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="javascript:void(0)" id="openContact">Contato</a>
+    </nav>
+
+  <div class="lang-switch">
+    <div class="lang-options" id="langOptions">
+        <button onclick="window.location.href='index.html'">
+        <img src="./icons/br-flag.png" alt="Português">
+      </button>
+        <button onclick="window.location.href='index_es.html'">
+        <img src="./icons/es-flag.png" alt="Espanhol">
+      </button>
+        <button onclick="window.location.href='index_en.html'">
+        <img src="./icons/en-flag.png" alt="English">
+      </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+    <div class="carousel">
+      <div class="list">
+        <div class="item" style="background-image: url(images/jeep4x4.jpg)">
+          <div class="content">
+            <div class="title">JEEP 4X4</div>
+            <div class="name">AVENTURE-SE!</div>
+            <div class="des">
+              Explore falésias, praias e dunas, viva a emoção da natureza e 
+              encerre com o pôr do sol mais incrível em frente a Lagoa de Guaraíras.
+            </div>
+            <div class="btn">
+              <button onclick="window.location.href='passeios.html'">Saiba Mais</button>
+              <button onclick="reservar(this)">Reservar</button>
+            </div>
+          </div>
+        </div>
+
+        <!--<div
+          class="item"
+          style="background-image: url(images/quadriciclos\ falésias.jpg)"
+        >
+          <div class="content">
+            <div class="title">QUADRICICLO</div>
+            <div class="name">ROTA DE AVENTURA!</div>
+            <div class="des">
+              Do hotel ao Chapadão da Pipa, passando por praias paradisíacas e 
+              encerrando no Mirante das Tartarugas — um passeio cheio de vistas de tirar o fôlego!
+            </div>
+            <div class="btn">
+              <button onclick="window.location.href='passeios.html'">Saiba Mais</button>
+              <button onclick="reservar(this)">Reservar</button>
+            </div>
+          </div>
+        </div>-->
+
+        <div class="item" style="background-image: url(images_tours/lanchapipa2.jpg)">
+          <div class="content">
+            <div class="title">LANCHA EM PIPA</div>
+            <div class="name">NAVEGAR É PRECISO!</div>
+            <div class="des">
+              Saindo da Praia do Centro, visita Baía dos Golfinhos, Praia do
+              Madeiro com parada para banho, e vista da Praia do Amor.
+            </div>
+            <div class="btn">
+              <button onclick="window.location.href='passeios.html'">Saiba Mais</button>
+              <button onclick="reservar(this)">Reservar</button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="item"
+          style="background-image: url(images/lancha_tibau.png)"
+        >
+          <div class="content">
+            <div class="title">LANCHA EM TIBAU</div>
+            <div class="name">TODO MUNDO QUER IR!</div>
+            <div class="des">
+              Explore ilhotas, dunas e manguezais, mergulhe no banho de argila e 
+              finalize com pura diversão nos bares molhados.
+            </div>
+            <div class="btn">
+              <button onclick="window.location.href='passeios.html'">Saiba Mais</button>
+              <button onclick="reservar(this)">Reservar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="item" style="background-image: url(images/Passeio\ de\ barco\ Gastronômico.webp)">
+          <div class="content">
+            <div class="title">SOLEMIO</div>
+            <div class="name">NAVEGANDO COM GASTRONOMIA</div>
+            <div class="des">
+              O passeio acontece na Lagoa de Guaraíras em Tibau do Sul e
+              Georgino Avelino com paradas para banho. Incluindo Open Bar e Open
+              Food durante o passeio que termina após o pôr do sol..
+            </div>
+            <div class="btn">
+              <button onclick="window.location.href='passeios.html'">Saiba Mais</button>
+              <button onclick="reservar(this)">Reservar</button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="item"
+          style="background-image: url(images/buggy_malemba.jpg)"
+        >
+          <div class="content">
+            <div class="title">BUGGY MALEMBÁ</div>
+            <div class="name">É EMOCIONANTE!</div>
+            <div class="des">
+              Prepare-se para acelerar nas dunas douradas, sentir a adrenalina das descidas e contemplar vistas incríveis da Lagoa de Guaraíras. Um passeio que une aventura, natureza e diversão.
+            </div>
+            <div class="btn">
+              <button onclick="window.location.href='passeios.html'">Saiba Mais</button>
+              <button onclick="reservar(this)">Reservar</button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="item"
+          style="background-image: url(images_tours/arituba.png)"
+        >
+          <div class="content">
+            <div class="title">BUGGY ARITUBA</div>
+            <div class="name">ÁGUAS TRANQUILAS</div>
+            <div class="des">
+              Aventura e paisagens inesquecíveis!
+              Corra pelas dunas, sinta a emoção das descidas e descontraia nas águas cristalinas da Lagoa de Arituba.
+            </div>
+            <div class="btn">
+              <button onclick="window.location.href='passeios.html'">Saiba Mais</button>
+              <button onclick="reservar(this)">Reservar</button>
+            </div>
+          </div>
+        </div>
+
+        <!--<div
+          class="item"
+          style="background-image: url(images/buggy-pirangy.png)"
+        >
+          <div class="content">
+            <div class="title">BUGGY PIRANGÍ</div>
+            <div class="name">O MAIOR CAJUEIRO DO MUNDO!</div>
+            <div class="des">
+              Saindo de Pipa e passando pela Lagoa de Guaraíras, as dunas de Malembá, Tabatinga e Barreta, 
+              o destino é a Praia de Pirangí — lar da maior árvore de caju do mundo.
+            </div>
+            <div class="btn">
+              <button onclick="window.location.href='passeios.html'">Saiba Mais</button>
+              <button onclick="reservar(this)">Reservar</button>
+            </div>
+          </div>
+        </div>-->
+
+        <div
+          class="item"
+          style="background-image: url(images_tours/buggy_sibauma.png)"
+        >
+          <div class="content">
+            <div class="title">BUGGY SIBAUMA</div>
+            <div class="name">É LOGO ALÍ!</div>
+            <div class="des">
+              Explore cenários rústicos, admire vistas deslumbrantes do alto das falésias e relaxe entre rio e mar.
+            </div>
+            <div class="btn">
+              <button onclick="window.location.href='passeios.html'">Saiba Mais</button>
+              <button onclick="reservar(this)">Reservar</button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="item"
+          style="background-image: url(images_tours/Barra\ CunhauZ1.jpg)"
+        >
+          <div class="content">
+            <div class="title">BUGGY CUNHAÚ</div>
+            <div class="name">A AMAZONIA POTIGUAR!</div>
+            <div class="des">
+              Explore falésias e mirantes, atravesse cenários de praia e rio, 
+              e descubra a beleza autêntica da Barra de Cunhaú.
+            </div>
+            <div class="btn">
+              <button onclick="window.location.href='passeios.html'">Saiba Mais</button>
+              <button onclick="reservar(this)">Reservar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="item" style="background-image: url(images_tours/lagoa_coca-cola.jpg)">
+          <div class="content">
+            <div class="title">BUGGY SAGÍ</div>
+            <div class="name">LÁ TEM CACHAÇA ARRETADA!</div>
+            <div class="des">
+              Entre falésias, rios e paisagens selvagens, o ponto alto é o banho revigorante na famosa Lagoa da Coca-Cola, 
+              com suas águas escuras e energizantes.
+            </div>
+            <div class="btn">
+              <button onclick="window.location.href='passeios.html'">Saiba Mais</button>
+              <button onclick="reservar(this)">Reservar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+      function reservar(botao) {
+      // pega o item do carousel
+      const item = botao.closest(".item");
+  
+      // pega o título e nome
+      const titulo = item.querySelector(".title").innerText;
+      // const nome = item.querySelector(".name").innerText;
+
+      // monta a mensagem
+      const mensagem = `Olá, quero reservar o(a) "*${titulo}*"`;
+
+      // abre o WhatsApp com a mensagem
+      const numero = "5584991202411"; // seu número com DDI e DDD
+      const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+      window.open(url, "_blank");
+      }
+      </script>
+
+      <!--next prev button-->
+      <div class="arrows">
+        <button class="prev"><</button>
+        <button class="next">></button>
+      </div>
+
+      <!-- time running -->
+      <div class="timeRunning"></div>
+    </div>
+
+    <script src="app.js"></script>
+
+  <!-- Modal apenas com formulário -->
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <form class="contact-form" action="enviar.php" method="post">
+        <h2>DEIXE-NOS UMA MENSAGEM</h2>
+        <label for="name">Nome</label>
+        <input type="text" id="name" name="name" autocomplete="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" autocomplete="email" required>
+
+        <label for="phone">Telefone / WhatsApp</label>
+        <input type="text" id="phone" name="phone" autocomplete="tel">
+
+        <label for="message">Mensagem</label>
+        <textarea id="message" name="message" rows="5" autocomplete="off" required></textarea>
+
+        <button type="submit">ENVIAR</button>
+      </form>
+    </div>
+  </div>
+
+  <a href="https://wa.me/5584991202411" class="whatsapp-button" target="_blank">
+  <img src="icons/social.png" alt="WhatsApp">
+  </a>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const openBtn = document.getElementById("openContact");
+    const modal = document.getElementById("contactModal");
+    const closeBtn = document.querySelector(".close");
+    const form = document.querySelector(".contact-form");
+
+    if (openBtn && modal && closeBtn) {
+      openBtn.onclick = (e) => {
+        e.preventDefault(); // impede navegação
+        modal.style.display = "block";
+      };
+
+      closeBtn.onclick = () => {
+        modal.style.display = "none";
+      };
+
+      window.onclick = (event) => {
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      };
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();                                                   // impede envio real
+        alert("Mensagem enviada com sucesso!");
+        form.reset();                                                         // limpa os campos
+        modal.style.display = "none";                                         // fecha o modal
+      });
+    }
+  });
+</script>
+
+  </body>
+</html>

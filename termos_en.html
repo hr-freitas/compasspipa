@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Terms and Conditions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/contact.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+    body {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;                                             /* Normal text */
+      margin: 0;                                                    /* Removed default margin for better layout control */
+      background: #f7f6f6;                                        /* Changed background color to a light gray for better contrast */
+      padding-top: 80px;                                            /* Added padding to the top to prevent content from being hidden behind the header */
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;                                             /* Negrito para títulos */
+    }
+    
+    .highlight {
+      font-weight: 500;                                             /* Medium para destaques */
+    }
+
+    main {
+      flex: 1;
+      padding: 20px;
+    }
+
+    header {
+      background: #006491;                                        /* Changed header background color to a more vibrant orange */
+      color: #fff;                                                /* Changed text color to white for better contrast */
+      padding: 15px;                                                /* Increased padding for better spacing */
+      align-items: center;                                          /* Centered header content vertically */
+      justify-content: space-between;                               /* Space out logo and navigation for better layout */
+      display: flex;                                                /* Use flexbox for better alignment of header content */
+
+      position: fixed;                                              /* Fixed header position to stay at the top of the page */
+      top: 0;                                                       /* Ensure header stays at the top of the page */
+      left: 0;                                                      /* Ensure header stays at the left of the page */
+      width: 100%;                                                  /* Make header take full width of the page */ 
+      height: 30px;                                                 /* Set a fixed height for the header for better consistency */
+      z-index: 1000;                                                /* Ensure header stays above other content */
+    }
+
+    .header-right {
+      display: flex;                                                /* Use flexbox for better alignment of right-side header content */
+      align-items: center;                                          /* Center right-side header content vertically */
+      gap: 20px;                                                    /* Added gap between right-side header items for better spacing */
+      margin-right: 60px;                                           /* Added margin to the right of the right-side header content for better spacing */
+    }
+
+    .logo {
+      margin-right: 0px;                                            /* Added margin to the right of the logo for better spacing */
+    }
+
+    .logo img {
+      height: 90px;                                                 /* Set a fixed height for the logo for better consistency */
+      margin: 0;                                                    /* Removed default margin for better layout control */
+      object-fit: contain;                                          /* Ensure logo image maintains its aspect ratio */
+    }
+
+    nav ul {
+      list-style: none;  
+      margin: 0;                                                    /* Removed default list styling for a cleaner look */
+      padding: 0 30px;                                             /* Removed default padding for better layout control */
+      display: flex;                                                /* Use flexbox for better alignment of navigation items */
+      gap: 0px;                                                    /* Added gap between navigation items for better spacing */
+    }
+
+    nav ul li a {
+      color: #fff;                                                /* Changed link color to white for better contrast */
+      text-decoration: none;                                        /* Removed underline from links for a cleaner look */
+      font-weight: bold;         
+      padding: 8px 20px;                                            /* Made links bold for better emphasis */
+      border-radius: 15px;                                          /* Added border radius for rounded corners */
+      transition: background 0.3s ease, color 0.3s ease;            /* Added transition for hover effect */
+    }
+
+    nav ul li a:hover,
+    nav ul li a:active {  
+      background: #36b3ec;                                        /* Changed button background color on hover for better visual feedback */
+    }
+
+    /* Botão hamburger para dispositivos móveis */
+    .menu-toggle {
+      display: none;                                                /* Hide the menu toggle button by default */
+      flex-direction: column;                                       /* Stack the lines vertically */
+      cursor: pointer;                                              /* Change cursor to pointer for better UX */
+    }
+
+    /* Responsividade para dispositivos móveis */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;                                              /* Hide the navigation menu on smaller screens */
+        flex-direction: column;                                     /* Stack the navigation items vertically */
+        background: #006491;                                      /* Change background color for better contrast */
+        position: absolute;                                         /* Position the menu absolutely for better control */
+        top: 60px;                                                  /* Position the menu below the header */
+        right: 0;                                                   /* Align the menu to the right */
+        width: 100%;                                                /* Make the menu take full width of the screen */
+      }
+      nav ul li {
+        text-align: center;                                         /* Center the navigation items */
+        padding: 10px 0;                                            /* Add padding for better spacing */
+      }
+      .menu-toggle {
+        display: flex;                                              /* Show the menu toggle button on smaller screens */
+      }
+    }
+   
+    .lang-switch {
+      display: flex;                                                  /* Use flexbox for better alignment of language switch buttons */
+      gap: 10px;                                                      /* espaçamento entre bandeiras */
+    }
+
+    .lang-switch button {
+      background: none;                                               /* Remove background for a cleaner look */
+      border: none;                                                   /* Remove border for a cleaner look */
+      cursor: pointer;                                                /* Change cursor to pointer for better UX */
+      padding: 0;                                                     /* Remove padding for better alignment */
+    }
+
+    .lang-switch img {
+      width: 30px;                                                    /* tamanho das bandeiras */
+      height: 20px;                                                   /* tamanho das bandeiras */
+      object-fit: cover;                                              /* Ensure flags maintain their aspect ratio */
+      border-radius: 3px;                                             /* Cantos levemente arredondados */
+      transition: transform 0.2s ease;                                /* Added transition for hover effect */
+    }
+
+    .lang-switch img:hover {
+      transform: scale(1.1);                                          /* Efeito de zoom ao passar o mouse */
+    }
+
+    h1 {
+      margin-top: 20px;                                             /* Added margin to the top of the heading for better spacing */
+      font-size: 2em;                                               /* Increased font size for better visibility */
+    }
+
+    /* Botão do WhatsApp */
+    .whatsapp-button {
+      position: fixed;                                                /* fica fixo na tela */
+      bottom: 20px;                                                   /* distância da borda inferior */
+      right: 20px;                                                    /* distância da borda direita */
+      z-index: 1000;                                                  /* fica acima dos outros elementos */
+    }
+
+    .whatsapp-button img {
+      width: 60px;                                                    /* tamanho do ícone */
+      height: 60px;
+      border-radius: 50%;                                             /* deixa o ícone redondo */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);                        /* sombra suave */
+      transition: transform 0.3s ease;
+    }
+
+    .whatsapp-button img:hover {
+      transform: scale(1.1);                                          /* efeito de zoom ao passar o mouse */
+    }
+
+    /* Footer */
+    footer {
+      background: #006491;
+      color: #fff;
+      display: flex;
+      flex-direction: row;                                            /* força horizontal */
+      justify-content: space-between;                                 /* distribui esquerda, centro e direita */
+      align-items: flex-start;                                        /* alinha ao topo */
+      padding: 20px 10%;
+      border-top: 2px solid #ddd;                                   /* linha separadora acima */
+    }
+
+    footer div {
+      margin: 0 10px;
+      flex: 0 0 auto;                                                 /* impede que cresçam verticalmente */
+    }
+
+    .footer-left { text-align: left; }
+    .footer-center { text-align: center; }
+    .footer-right { text-align: right; }
+
+    .footer-center {
+      text-align: left;
+      display: flex;
+      flex-direction: column;                                         /* empilha os links */
+      gap: 6px;                                                       /* espaço entre eles */
+    }
+
+    .footer h3 {
+      margin: 0 0 5px 0;
+      font-size: 1.1em;
+      color: #fff;
+      text-align: left;
+    }
+
+    .footer-center a {
+      display: block;                                                 /* cada link ocupa uma linha */
+      color: #fff;
+      text-decoration: none;
+      margin: 2px 0;
+    }
+
+    .footer-center a:hover {
+      text-decoration: underline;                                     /* opcional: destaque ao passar o mouse */
+    }
+
+    .footer-right img {
+      width: 40px;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+
+    p {
+      text-align: left;
+      margin:  5px 0;
+      line-height: 1.4;
+      font-weight: 400;                                               /* Regular para textos */
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+    footer {
+      flex-direction: column;                                       /* empilha os blocos no celular */
+      text-align: center;
+      }
+    .footer-left,
+    .footer-center,
+    .footer-right {
+      margin: 10px 0;
+      text-align: center;
+
+
+      flex: 1;
+      margin: 0 10px;
+      }
+    }
+
+    .footer-creditos {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #6eb5d6;
+      margin-top: 0px;
+      width: 100%;
+      background-color: #006494;
+      padding: 5px 0;
+    }
+
+    .sobre-texto {
+      max-width: 800px;
+      margin: 0 auto 70px auto;                                       /* centraliza e dá espaço antes do rodapé */
+      text-align: justify;
+    }
+
+    .sobre-texto p {
+      margin-bottom: 20px;                                            /* espaço entre os parágrafos */
+      line-height: 1.6;                                               /* altura da linha para leitura confortável */
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><img src="icons/logo1.png" alt="Logo"></div>
+
+    <!-- Bloco da direita -->
+    <div class="header-right">
+    <nav>
+      <ul>
+        <li><a href="index_en.html">Home</a></li>
+        <li><a href="passeios_en.html">Tours</a></li>
+        <li><a href="transporte_en.html">Transportation</a></li>
+        <li><a href="sobre_en.html">About us</a></li>
+        <li><a href="javascript:void(0)" id="openContact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="lang-switch">
+      <button onclick="window.location.href='termos.html'"><img src="icons/br-flag.png" alt="Portugues"></button>
+      <button onclick="window.location.href='termos_es.html'"><img src="icons/es-flag.png" alt="Espanhol"></button>
+      <button onclick="window.location.href='termos_en.html'"><img src="icons/en-flag.png" alt="English"></button>
+    </div>
+    </div>
+  </header>
+
+  <h1 style="text-align: center; color: #006494; margin-top: 30px;">Terms and Conditions</h1>
+
+  <div class="sobre-texto">
+  <h3>1. Objective</h3>
+    <p>
+      These Terms and Conditions regulate the purchase and participation in tourist tours offered by the agency, ensuring transparency and security for our customers.
+    </p>
+  <h3>2. Reservations and Payments</h3>
+    <p>
+        Reservations are confirmed upon full payment or deposit as indicated at the time of purchase.
+        The prices of the tours include only the services described in the itinerary.
+        Payments can be made via bank transfer, PIX or other methods accepted by the agency.
+        Non-payment within the specified deadline may result in automatic cancellation of the reservation.
+    </p>
+  <h3>3. Cancellations and Refunds</h3>
+    <p>
+        Cancellations must be submitted in writing (email or WhatsApp).
+        Full refund: up to 2 days before the tour date.
+        Partial refund (50%): between 2 and 1 days before the tour.
+        Cancellations with less than 24 hours do not generate a refund.
+        In case of adverse weather conditions or force majeure, the tour may be rescheduled or fully refunded.
+    </p>
+  <h3>4. Customer Responsibilities</h3>
+    <p>
+        Arrive at the designated location and time.
+        Follow the guidance of the guides and staff during the tour.
+        Inform previously about medical conditions, dietary restrictions or special needs.
+        Take care of safety and respect the environment and local regulations.
+    </p>
+  <h3>5. Agency Responsibilities</h3>
+    <p>
+        Ensure the execution of the services as described in the itinerary.
+        Provide qualified guides and appropriate equipment when applicable.
+        Maintain civil liability insurance as required by tourism legislation.
+    </p>
+  <h3>6. Alteration of Itinerary</h3>
+    <p>
+        The agency reserves the right to change the itinerary, schedules or sequence of activities for reasons of safety, weather or logistics, always seeking to preserve the quality of the experience.
+    </p>
+  <h3>7. Use of Images</h3>
+    <p>
+        By participating in the tours, the customer authorizes the use of their image in photos and videos for promotional purposes of the agency, unless contrary manifestation is made in writing.
+    </p>
+  <h3>8. Data Protection</h3>
+    <p>
+      The personal information provided will be used exclusively for reservation and communication purposes, in accordance with the General Data Protection Law (LGPD – Law No. 13,709/2018).
+    </p>
+  <h3>9. Forum</h3>
+    <p>
+      The court of the district of Goianinha/RN is hereby elected to settle any doubts or disputes arising from these Terms.
+    </p>
+  </div>
+
+  <!-- Modal apenas com formulário -->
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <form class="contact-form" action="enviar.php" method="post">
+        <h2>LEAVE US A MESSAGE</h2>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" autocomplete="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" autocomplete="email" required>
+
+        <label for="phone">Phone / WhatsApp</label>
+        <input type="text" id="phone" name="phone" autocomplete="tel">
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" autocomplete="off" required></textarea>
+
+        <button type="submit">SEND MESSAGE</button>
+      </form>
+    </div>
+  </div>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const openBtn = document.getElementById("openContact");
+    const modal = document.getElementById("contactModal");
+    const closeBtn = document.querySelector(".close");
+    const form = document.querySelector(".contact-form");
+
+    if (openBtn && modal && closeBtn) {
+      openBtn.onclick = (e) => {
+        e.preventDefault(); // impede navegação
+        modal.style.display = "block";
+      };
+
+      closeBtn.onclick = () => {
+        modal.style.display = "none";
+      };
+
+      window.onclick = (event) => {
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      };
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();                                                   // impede envio real
+        alert("Message sent successfully!");
+        form.reset();                                                         // limpa os campos
+        modal.style.display = "none";                                         // fecha o modal
+      });
+    }
+  });
+</script>
+
+  <a href="https://wa.me/5584991202411" class="whatsapp-button" target="_blank">
+  <img src="icons/social.png" alt="WhatsApp">
+  </a>
+
+<footer>
+  <div class="footer-left">
+    <h3>CompassPipa</h3>
+    <p>Rua Dr. Hélio Galvão, 100<br>
+    59178-000 Tibau do Sul - RN<br>
+    contato@compasspipa.com.br<br>
+    Tel: (84) 99120-2411</p>
+  </div>
+
+  <div class="footer-center">
+    <h3>Information</h3>
+    <a href="termos_en.html">Terms and Conditions</a>
+    <a href="politicas_en.html">Privacy Policy</a>
+  </div>
+
+  <div class="footer-right">
+    <h3>Payment Methods</h3>
+    <img src="icons/google-verificado.png" alt="Google Verified" style="height: 20px; width: 60px;">
+    <img src="icons/ssl-logos_orig.png" alt="Trusted Site">
+    <img src="icons/pix-icone.png" alt="Pix">
+    <img src="icons/cash.png" alt="Cash">
+  </div>
+</footer>
+
+<div class="footer-creditos">
+  Developed by hr.freitas
+</div>
+
+</body>
+</html>

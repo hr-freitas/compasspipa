@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Transporte</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/global.css">
+  <link rel="stylesheet" href="/contact.css">
+  <style>
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><img src="icons/logo1.png" alt="Logo"></div>
+
+    <!-- Bloco da direita -->
+    <div class="header-right">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="passeios.html">Passeios</a></li>
+        <li><a href="transporte.html">Transporte</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="javascript:void(0)" id="openContact">Contato</a></li>
+      </ul>
+    </nav>
+
+    <div class="lang-switch">
+      <button onclick="window.location.href='transporte.html'"><img src="icons/br-flag.png" alt="Portugues"></button>
+      <button onclick="window.location.href='transporte_es.html'"><img src="icons/es-flag.png" alt="Espanhol"></button>
+      <button onclick="window.location.href='transporte_en.html'"><img src="icons/en-flag.png" alt="English"></button>
+    </div>
+    </div>
+  </header>
+
+  <h1 style="text-align: center; color: #006494;">Confira todos os transportes disponíveis!</h1>
+
+  <div class="container">
+
+    <div class="card">
+      <img src="images_transp/spin.jpg" alt="Transporte 001">
+      <h2 id="transporte-nat-pipa">Transfer Aeroporto NAT / Pipa</h2>
+      <p>Serviço de transporte do aeroporto de Natal - Pipa.</p>
+      <div class="info-passeio">
+        <p><i class="fa-solid fa-calendar"></i> Diáriamente</p>
+        <p><i class="fas fa-clock"></i> 1h e 30min. aprox.</p>
+        <p><i class="fa-solid fa-circle-user"></i> Motoguia</p>
+    </div>
+    <div class="preco">R$ 300,00 <span>de 1 - 3 pes.</span></div>
+    <button onclick="consultar(this)">Consultar</button>
+  </div>
+
+  <div class="card">
+    <img src="images_transp/spin.jpg" alt="Transporte 002">
+    <h2 id="transporte-nat-pipa">Transfer Aeroporto NAT / Pipa</h2>
+    <p>Serviço de transporte do aeroporto de Natal - Pipa.</p>
+    <div class="info-passeio">
+      <p><i class="fa-solid fa-calendar"></i> Diáriamente</p>
+      <p><i class="fas fa-clock"></i> 1h e 30min. aprox.</p>
+      <p><i class="fa-solid fa-circle-user"></i> Motoguia</p>
+    </div>
+    <div class="preco">R$ 400,00 <span>de 4 - 6 pes.</span></div>
+    <button onclick="consultar(this)">Consultar</button>
+  </div>
+
+  <div class="card">
+    <img src="images_transp/van6.png" alt="Transporte 003">
+    <h2 id="transporte-nat-pipa">Transfer Aeroporto NAT / Pipa</h2>
+    <p>Serviço de transporte do aeroporto de Natal - Pipa, em veículo do tipo van.</p>
+    <div class="info-passeio">
+      <p><i class="fa-solid fa-calendar"></i> Diáriamente</p>
+      <p><i class="fas fa-clock"></i> 1h e 30min. aprox.</p>
+      <p><i class="fa-solid fa-circle-user"></i> Motoguia</p>
+    </div>
+    <div class="preco">R$ 690,00 <span>de 7 - 12 pes.</span></div>
+    <button onclick="consultar(this)">Consultar</button>
+  </div>
+
+  <div class="card">
+      <img src="images_transp/spin.jpg" alt="Transporte 001">
+      <h2 id="transporte-nat-vila-gale">Transfer Aerop. NAT / Vila Galé</h2>
+      <p>Serviço de transporte do aeroporto de Natal - Vila Galé.</p>
+      <div class="info-passeio">
+        <p><i class="fa-solid fa-calendar"></i> Diáriamente</p>
+        <p><i class="fas fa-clock"></i> 1h e 30m aprox.</p>
+        <p><i class="fa-solid fa-circle-user"></i> Motoguia</p>
+    </div>
+    <div class="preco">R$ 280,00 <span>de 1 - 3 pes.</span></div>
+    <button onclick="consultar(this)">Consultar</button>
+  </div>
+
+  <div class="card">
+    <img src="images_transp/spin.jpg" alt="Transporte 002">
+    <h2 id="transporte-nat-vila-gale">Transfer Aerop. NAT / Vila Galé</h2>
+    <p>Serviço de transporte do aeroporto de Natal - Vila Galé.</p>
+    <div class="info-passeio">
+      <p><i class="fa-solid fa-calendar"></i> Diáriamente</p>
+      <p><i class="fas fa-clock"></i> 1h e 30m aprox.</p>
+      <p><i class="fa-solid fa-circle-user"></i> Motoguia</p>
+    </div>
+    <div class="preco">R$ 360,00 <span>de 4 - 6 pes.</span></div>
+    <button onclick="consultar(this)">Consultar</button>
+  </div>
+
+  <div class="card">
+    <img src="images_transp/van6.png" alt="Transporte 003">
+    <h2 id="transporte-nat-vila-gale">Transfer Aerop. NAT / Vila Galé</h2>
+    <p>Serviço de transporte do aeroporto de Natal - Vila Galé, em veículo do tipo van.</p>
+    <div class="info-passeio">
+      <p><i class="fa-solid fa-calendar"></i> Diáriamente</p>
+      <p><i class="fas fa-clock"></i> 1h e 30m aprox.</p>
+      <p><i class="fa-solid fa-circle-user"></i> Motoguia</p>
+    </div>
+    <div class="preco">R$ 690,00 <span>de 7 - 12 pes.</span></div>
+    <button onclick="consultar(this)">Consultar</button>
+  </div>
+
+  <div class="card">
+      <img src="images_transp/spin.jpg" alt="Transporte 001">
+      <h2 id="transporte-jpa-pipa">Transfer Aeroporto JPA / Pipa</h2>
+      <p>Serviço de transporte do aeroporto de João Pessoa - Pipa.</p>
+      <div class="info-passeio">
+        <p><i class="fa-solid fa-calendar"></i> Diáriamente</p>
+        <p><i class="fas fa-clock"></i> 2h aprox.</p>
+        <p><i class="fa-solid fa-circle-user"></i> Motoguia</p>
+    </div>
+    <div class="preco">R$ 380,00 <span>de 1 - 3 pes.</span></div>
+    <button onclick="consultar(this)">Consultar</button>
+  </div>
+
+  <div class="card">
+    <img src="images_transp/spin.jpg" alt="Transporte 002">
+    <h2 id="transporte-jpa-pipa">Transfer Aeroporto JPA / Pipa</h2>
+    <p>Serviço de transporte do aeroporto de João Pessoa - Pipa.</p>
+    <div class="info-passeio">
+      <p><i class="fa-solid fa-calendar"></i> Diáriamente</p>
+      <p><i class="fas fa-clock"></i> 2h aprox.</p>
+      <p><i class="fa-solid fa-circle-user"></i> Motoguia</p>
+    </div>
+    <div class="preco">R$ 510,00 <span>de 4 - 6 pes.</span></div>
+    <button onclick="consultar(this)">Consultar</button>
+  </div>
+
+  <div class="card">
+    <img src="images_transp/van6.png" alt="Transporte 003">
+    <h2 id="transporte-jpa-pipa">Transfer Aeroporto JPA / Pipa</h2>
+    <p>Serviço de transporte do aeroporto de João Pessoa - Pipa, em veículo do tipo van.</p>
+    <div class="info-passeio">
+      <p><i class="fa-solid fa-calendar"></i> Diáriamente</p>
+      <p><i class="fas fa-clock"></i> 2h aprox.</p>
+      <p><i class="fa-solid fa-circle-user"></i> Motoguia</p>
+      <!-- <p class="car"><i class="fa-solid fa-car"></i> Veículo: Van</p> -->
+    </div>
+    <div class="preco">R$ 1.350,00 <span>de 7 - 12 pes.</span></div>
+    <button onclick="consultar(this)">Consultar</button>
+  </div>
+
+  </div>
+  <script>
+  function consultar(botao) {
+    // pega o título do card (nome do transporte)
+    const card = botao.closest(".card");
+    const titulo = card.querySelector("h2").innerText;
+    const preco = card.querySelector(".preco").innerText; // valor + info
+
+    // monta a mensagem
+    const mensagem = `Olá, quero consultar a disponibilidade do "${titulo}" - ${preco}`;
+
+    // abre o WhatsApp com a mensagem
+    const numero = "5584991202411"; // seu número com DDI e DDD
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+    window.open(url, "_blank");
+  }
+</script>
+
+  <!-- Modal apenas com formulário -->
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <form class="contact-form" action="enviar.php" method="post">
+        <h2>DEIXE-NOS UMA MENSAGEM</h2>
+        <label for="name">Nome</label>
+        <input type="text" id="name" name="name" autocomplete="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" autocomplete="email" required>
+
+        <label for="phone">Telefone / WhatsApp</label>
+        <input type="text" id="phone" name="phone" autocomplete="tel">
+
+        <label for="message">Mensagem</label>
+        <textarea id="message" name="message" rows="5" autocomplete="off" required></textarea>
+
+        <button type="submit">ENVIAR</button>
+      </form>
+    </div>
+  </div>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const openBtn = document.getElementById("openContact");
+    const modal = document.getElementById("contactModal");
+    const closeBtn = document.querySelector(".close");
+    const form = document.querySelector(".contact-form");
+
+    if (openBtn && modal && closeBtn) {
+      openBtn.onclick = (e) => {
+        e.preventDefault(); // impede navegação
+        modal.style.display = "block";
+      };
+
+      closeBtn.onclick = () => {
+        modal.style.display = "none";
+      };
+
+      window.onclick = (event) => {
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      };
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();                                           // impede envio real
+        alert("Mensagem enviada com sucesso!");
+        form.reset();                                                 // limpa os campos
+        modal.style.display = "none";                                 // fecha o modal
+      });
+    }
+  });
+</script>
+
+  <a href="https://wa.me/5584991202411" class="whatsapp-button" target="_blank">
+  <img src="icons/social.png" alt="WhatsApp">
+  </a>
+
+<footer>
+  <div class="footer-left">
+    <h3>CompassPipa</h3>
+    <p>Rua Dr. Hélio Galvão, 100<br>
+    59178-000 Tibau do Sul - RN<br>
+    contato@compasspipa.com.br<br>
+    Tel: (84) 99120-2411</p>
+  </div>
+
+  <div class="footer-center">
+    <h3>Informações</h3>
+    <a href="termos.html">Termos e Condições</a>
+    <a href="politicas.html">Política de Privacidade</a>
+  </div>
+
+  <div class="footer-right">
+    <h3>Formas de Pagamento</h3>
+    <img src="icons/google-verificado.png" alt="Google Verificado" style="height: 20px; width: 60px;">
+    <img src="icons/ssl-logos_orig.png" alt="Site Confiável">
+    <img src="icons/pix-icone.png" alt="Pix">
+    <img src="icons/cash.png" alt="Cash">
+  </div>
+</footer>
+
+<div class="footer-creditos">
+  Desenvolvido por hr.freitas
+</div>
+
+</body>
+</html>

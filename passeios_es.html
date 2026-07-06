@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Paseos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/global.css">
+  <link rel="stylesheet" href="/contact.css">
+  <style>
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><img src="icons/logo1.png" alt="Logo"></div>
+
+    <!-- Bloco da direita -->
+    <div class="header-right">
+    <nav>
+      <ul>
+        <li><a href="index_es.html">Home</a></li>
+        <li><a href="passeios_es.html">Paseos</a></li>
+        <li><a href="transporte_es.html">Transporte</a></li>
+        <li><a href="sobre_es.html">Sobre nosotros</a></li>
+        <li><a href="javascript:void(0)" id="openContact">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div class="lang-switch">
+      <button onclick="window.location.href='passeios.html'"><img src="icons/br-flag.png" alt="Portugues"></button>
+      <button onclick="window.location.href='passeios_es.html'"><img src="icons/es-flag.png" alt="Espanhol"></button>
+      <button onclick="window.location.href='passeios_en.html'"><img src="icons/en-flag.png" alt="English"></button>
+    </div>
+    </div>
+  </header>
+
+  <h1 style="text-align: center; color: #006494;">Descubre todos los paseos disponibles!</h1>
+
+  <div class="container">
+    
+    <div class="card">
+      <img src="images_tours/jeep_limousine.png" alt="imagem 01">
+      <h2 id="passeio-de-jeep">Paseo en Jeep</h2>
+      <p>Explora acantilados, playas y dunas, vive la emoción de la naturaleza y termina con la puesta de sol más increíble frente a la Laguna de Guaraíras.</p>
+      <div class="info-passeio">
+        <p><i class="fa-solid fa-location-dot"></i> Acantilados, dunas y puesta de sol</p>
+        <p><i class="fa-solid fa-calendar"></i> Diáriamente</p>
+        <p><i class="fas fa-clock"></i> Todo el día</p>
+    </div>
+    <div class="preco">R$ 120,00 <span>por persona</span></div>
+    <button onclick="reservar(this)">Reservar</button>
+  </div>
+
+  <div class="card">
+    <img src="images_tours/lancha_tibau.png" alt="imagem 02">
+    <h2 id="passeio-de-lancha">Paseo en Lancha - Tibau</h2>
+    <p>Explora islotes, dunas y manglares, disfruta de un baño de arcilla y termina con pura diversión en los bares acuáticos.</p>
+    <div class="info-passeio">
+      <p><i class="fa-solid fa-location-dot"></i> Laguna de Guaraíras</p>
+      <p><i class="fa-solid fa-calendar"></i> Diáriamente</p>
+      <p><i class="fas fa-clock"></i> 1h aprox.</p>
+    </div>
+    <div class="preco">R$ 75,00 <span>por persona</span></div>
+    <button onclick="reservar(this)">Reservar</button>
+  </div>
+
+  <div class="card">
+    <img src="images_tours/no-image.jpeg" alt="imagem 03">
+    <h2 id="passeio-de-quadriciclo">Paseo en Quadriciclo</h2>
+    <p>Desde el hotel hasta el Chapadão de Pipa, pasando por playas paradisíacas y terminando en el Mirador de las Tortugas — ¡una excursión llena de vistas impresionantes!</p>
+    <div class="info-passeio">
+      <p><i class="fa-solid fa-location-dot"></i> Tibau do Sul</p>
+      <p><i class="fa-solid fa-calendar"></i> Diáriamente</p>
+      <p><i class="fas fa-clock"></i> 1h e 30min. aprox.</p>
+    </div>
+    <div class="preco">R$ 200,00 <span>por ATV</span></div>
+    <button onclick="reservar(this)">Reservar</button>
+  </div>
+
+  <div class="card">
+    <img src="images_tours/buggy_malemba.jpeg" alt="imagem 04">
+    <h2 id="buggy-dunas-de-malembar">Buggy Dunas de Malembá</h2>
+    <p>Prepárate para acelerar por las dunas doradas, sentir la adrenalina de las bajadas y contemplar las increíbles vistas de la Laguna de Guaraíras. Una excursión que combina aventura, naturaleza y diversión.</p>
+    <div class="info-passeio">
+      <p><i class="fa-solid fa-location-dot"></i> Playas y dunas</p>
+      <p><i class="fa-solid fa-calendar"></i> Diáriamente</p>
+      <p><i class="fas fa-clock"></i> 3 horas</p>
+    </div>
+    <div class="preco">R$ 600,00 <span>por buggy</span></div>
+    <button onclick="reservar(this)">Reservar</button>
+  </div>
+
+  <div class="card">
+    <img src="images_tours/arituba.png" alt="imagem 05">
+    <h2 id="buggy-lagoa-de-arituba">Buggy Laguna de Arituba</h2>
+    <p>Aventura y paisajes inolvidables!
+    Acelera por las dunas, siente la emoción de las bajadas y relájate en las aguas cristalinas de la Laguna de Arituba. </p>
+    <div class="info-passeio">
+      <p><i class="fa-solid fa-location-dot"></i> Laguna de Arituba</p>
+      <p><i class="fa-solid fa-calendar"></i> Diáriamente</p>
+      <p><i class="fas fa-clock"></i> 4 horas</p>
+    </div>
+    <div class="preco">R$ 700,00 <span>por buggy</span></div>
+    <button onclick="reservar(this)">Reservar</button>
+  </div>
+
+  <div class="card">
+    <img src="images_tours/byggy_genipabu4.png" alt="imagem 06">
+    <h2 id="buggy-genipabu">Buggy Genipabu</h2>
+    <p>Acelera por las dunas móviles, siente la adrenalina de las bajadas y disfruta de las vistas únicas de las lagunas y del litoral potiguar.</p>
+    <div class="info-passeio">
+      <p><i class="fa-solid fa-location-dot"></i> Playas y dunas</p>
+      <p><i class="fa-solid fa-calendar"></i> Diáriamente</p>
+      <p><i class="fas fa-clock"></i> Todo el día</p>
+    </div>
+    <div class="preco">R$ 1.400,00 <span>por buggy</span></div>
+    <button onclick="reservar(this)">Reservar</button>
+  </div>
+
+  <div class="card">
+    <img src="images_tours/buggy_sibauma.png" alt="imagem 07">
+    <h2 id="buggy-sibauma">Buggy Sibauma</h2>
+    <p>Explora paisajes rústicos, admira vistas deslumbrantes desde lo alto de los acantilados y relájate entre el río y el mar.</p>
+    <div class="info-passeio">
+      <p><i class="fa-solid fa-location-dot"></i> Acantilados, playas y río</p>
+      <p><i class="fa-solid fa-calendar"></i> Diáriamente</p>
+      <p><i class="fas fa-clock"></i> 3 horas</p>
+    </div>
+    <div class="preco">R$ 500,00 <span>por buggy</span></div>
+    <button onclick="reservar(this)">Reservar</button>
+  </div>
+
+  <div class="card">
+    <img src="images_tours/Barra CunhauZ1.jpg" alt="imagem 08">
+    <h2 id="buggy-barra-de-cunhau">Buggy Barra de Cunhaú</h2>
+    <p>Explora acantilados y miradores, atraviesa paisajes de playa y río, y descubre la belleza auténtica de Barra de Cunhaú.</p>
+    <div class="info-passeio">
+      <p><i class="fa-solid fa-location-dot"></i> Acantilados, playas y río</p>
+      <p><i class="fa-solid fa-calendar"></i> Diáriamente</p>
+      <p><i class="fas fa-clock"></i> 4 horas</p>
+    </div>
+    <div class="preco">R$ 600,00 <span>por buggy</span></div>
+    <button onclick="reservar(this)">Reservar</button>
+  </div>
+
+  <div class="card">
+    <img src="images_tours/buggy_coca_cola.png" alt="imagem 09">
+    <h2 id="buggy-sagi">Buggy Sagí</h2>
+    <p>Entre acantilados, ríos y paisajes salvajes, el punto culminante es el baño revitalizante en la famosa Laguna de Coca-Cola, con sus aguas oscuras y energizantes.</p>
+    <div class="info-passeio">
+      <p><i class="fa-solid fa-location-dot"></i> Acantilados, playas y río</p>
+      <p><i class="fa-solid fa-calendar"></i> Diáriamente</p>
+      <p><i class="fas fa-clock"></i> 6 horas</p>
+    </div>
+    <div class="preco">R$ 1.000,00 <span>por buggy</span></div>
+    <button onclick="reservar(this)">Reservar</button>
+  </div>
+</div>
+<script>
+  function reservar(botao) {
+    // pega o título do card (nome do transporte)
+    const card = botao.closest(".card");
+    const titulo = card.querySelector("h2").innerText;
+    const preco = card.querySelector(".preco").innerText; // valor + info
+
+    // monta a mensagem
+    const mensagem = `Hola, quiero reservar el(la) "*${titulo}*" - ${preco}`;
+
+    // abre o WhatsApp com a mensagem
+    const numero = "5584991202411"; // seu número com DDI e DDD
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+    window.open(url, "_blank");
+  }
+</script>
+
+  <!-- Modal apenas com formulário -->
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <form class="contact-form" action="enviar.php" method="post">
+        <h2>DÉJANOS UN MENSAJE</h2>
+        <label for="name">Nombre</label>
+        <input type="text" id="name" name="name" autocomplete="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" autocomplete="email" required>
+
+        <label for="phone">Telefone / WhatsApp</label>
+        <input type="text" id="phone" name="phone" autocomplete="tel">
+
+        <label for="message">Mensaje</label>
+        <textarea id="message" name="message" rows="5" autocomplete="off" required></textarea>
+
+        <button type="submit">ENVIAR</button>
+      </form>
+    </div>
+  </div>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const openBtn = document.getElementById("openContact");
+    const modal = document.getElementById("contactModal");
+    const closeBtn = document.querySelector(".close");
+    const form = document.querySelector(".contact-form");
+
+    if (openBtn && modal && closeBtn) {
+      openBtn.onclick = (e) => {
+        e.preventDefault(); // impede navegação
+        modal.style.display = "block";
+      };
+
+      closeBtn.onclick = () => {
+        modal.style.display = "none";
+      };
+
+      window.onclick = (event) => {
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      };
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();                                                   // impede envio real
+        alert("Mensaje enviado con éxito!");
+        form.reset();                                                         // limpa os campos
+        modal.style.display = "none";                                         // fecha o modal
+      });
+    }
+  });
+</script>
+
+  <a href="https://wa.me/5584991202411" class="whatsapp-button" target="_blank">
+  <img src="icons/social.png" alt="WhatsApp">
+  </a>
+
+<footer>
+  <div class="footer-left">
+    <h3>CompassPipa</h3>
+    <p>Rua Dr. Hélio Galvão, 100<br>
+    59178-000 Tibau do Sul - RN<br>
+    contato@compasspipa.com.br<br>
+    Tel: (84) 99120-2411</p>
+  </div>
+
+  <div class="footer-center">
+    <h3>Informaciones</h3>
+    <a href="termos_es.html">Términos y Condiciones</a>
+    <a href="politicas_es.html">Política de Privacidad</a>
+  </div>
+
+  <div class="footer-right">
+    <h3>Formas de Pagamento</h3>
+    <img src="icons/google-verificado.png" alt="Google Verificado" style="height: 20px; width: 60px;">
+    <img src="icons/ssl-logos_orig.png" alt="Site Confiável">
+    <img src="icons/pix-icone.png" alt="Pix">
+    <img src="icons/cash.png" alt="Cash">
+  </div>
+</footer>
+
+<div class="footer-creditos">
+  Desenvolvido por hr.freitas
+</div>
+
+</body>
+</html>

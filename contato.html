@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Contato</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+
+  <!-- Link no header -->
+  <a href="#" id="openContact">Contato</a>
+
+  <!-- Modal apenas com formulário -->
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <form class="contact-form" action="enviar.php" method="post">
+        
+        <h2>DEIXE-NOS UMA MENSAGEM</h2>
+        <label for="name">Nome</label>
+        <input type="text" id="name" name="name" autocomplete="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" autocomplete="email" required>
+
+        <label for="phone">Telefone / WhatsApp</label>
+        <input type="text" id="phone" name="phone" autocomplete="tel">
+
+        <label for="message">Mensagem</label>
+        <textarea id="message" name="message" rows="5" autocomplete="off" required></textarea>
+
+        <button type="submit">ENVIAR</button>
+      </form>
+      <div id="form-status"></div> <!-- espaço para feedback -->
+    </div>
+  </div>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const openBtn = document.getElementById("openContact");
+  const modal = document.getElementById("contactModal");
+  const closeBtn = document.querySelector(".close");
+  const form = document.querySelector(".contact-form");
+  const status = document.getElementById("form-status");
+
+  // abrir/fechar modal
+  openBtn.onclick = (e) => {
+    e.preventDefault();
+    modal.style.display = "block";
+  };
+  closeBtn.onclick = () => modal.style.display = "none";
+  window.onclick = (event) => {
+    if (event.target === modal) modal.style.display = "none";
+  };
+
+  // envio AJAX
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+
+    try {
+      const resp = await fetch("enviar.php", {
+        method: "POST",
+        body: data
+      });
+      const text = await resp.text();
+      status.innerHTML = `<p style="color:green;font-weight:bold;">${text}</p>`;
+      form.reset();
+    } catch (error) {
+      status.innerHTML = `<p style="color:red;">Erro ao enviar. Tente novamente.</p>`;
+    }
+    });
+  });
+  </script>
+
+</body>
+</html>

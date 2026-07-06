@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+    body {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;                                            /* Normal text */
+      margin: 0;                                                   /* Removed default margin for better layout control */
+      background: #f7f6f6;                                       /* Changed background color to a light gray for better contrast */
+      padding-top: 80px;                                           /* Added padding to the top to prevent content from being hidden behind the header */
+    }
+
+    h1, h2, h3 {
+      font-weight: 700; /* Negrito para títulos */
+    }
+   
+    .highlight {
+      font-weight: 500; /* Medium para destaques */
+    }
+
+    header {
+      background: #006491;                                        /* Changed header background color to a more vibrant orange */
+      color: #fff;                                                /* Changed text color to white for better contrast */
+      padding: 15px;                                                /* Increased padding for better spacing */
+      align-items: center;                                          /* Centered header content vertically */
+      justify-content: space-between;                               /* Space out logo and navigation for better layout */
+      display: flex;                                                /* Use flexbox for better alignment of header content */
+
+      position: fixed;                                              /* Fixed header position to stay at the top of the page */
+      top: 0;                                                       /* Ensure header stays at the top of the page */
+      left: 0;                                                      /* Ensure header stays at the left of the page */
+      width: 100%;                                                  /* Make header take full width of the page */ 
+      height: 30px;                                                 /* Set a fixed height for the header for better consistency */
+      z-index: 1000;                                                /* Ensure header stays above other content */
+    }
+
+    .header-right {
+      display: flex;                                                /* Use flexbox for better alignment of right-side header content */
+      align-items: center;                                          /* Center right-side header content vertically */
+      gap: 20px;                                                    /* Added gap between right-side header items for better spacing */
+      margin-right: 60px;                                           /* Added margin to the right of the right-side header content for better spacing */
+    }
+
+    .logo {
+      margin-right: 0px;                                            /* Added margin to the right of the logo for better spacing */
+      margin-top: 10px;                                                /* Added margin to the top of the logo for better spacing */
+    }
+
+    .logo img {
+      height: 90px;                                                 /* Set a fixed height for the logo for better consistency */
+      margin: 0;                                                    /* Removed default margin for better layout control */
+      object-fit: contain;                                          /* Ensure logo image maintains its aspect ratio */
+    }
+
+    nav ul {
+      list-style: none;  
+      margin: 0;                                                    /* Removed default list styling for a cleaner look */
+      padding: 0 30px;                                             /* Removed default padding for better layout control */
+      display: flex;                                                /* Use flexbox for better alignment of navigation items */
+      gap: 0px;                                                    /* Added gap between navigation items for better spacing */
+    }
+
+    nav ul li a {
+      color: #fff;                                                /* Changed link color to white for better contrast */
+      text-decoration: none;                                        /* Removed underline from links for a cleaner look */
+      font-weight: bold;         
+      padding: 8px 20px;                                            /* Made links bold for better emphasis */
+      border-radius: 5px;                                          /* Added border radius for rounded corners */
+      transition: background 0.3s ease, color 0.3s ease;            /* Added transition for hover effect */
+    }
+
+    nav ul li a:hover,
+    nav ul li a:active {  
+      background: #24a2dd;                                        /* Changed button background color on hover for better visual feedback */
+    }
+
+    /* Botão hamburger para dispositivos móveis */
+    .menu-toggle {
+      display: none;                                                /* Hide the menu toggle button by default */
+      flex-direction: column;                                       /* Stack the lines vertically */
+      cursor: pointer;                                              /* Change cursor to pointer for better UX */
+    }
+
+    /* Responsividade para dispositivos móveis */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;                                              /* Hide the navigation menu on smaller screens */
+        flex-direction: column;                                     /* Stack the navigation items vertically */
+        background: #006491;                                      /* Change background color for better contrast */
+        position: absolute;                                         /* Position the menu absolutely for better control */
+        top: 60px;                                                  /* Position the menu below the header */
+        right: 0;                                                   /* Align the menu to the right */
+        width: 100%;                                                /* Make the menu take full width of the screen */
+      }
+      nav ul li {
+        text-align: center;                                         /* Center the navigation items */
+        padding: 10px 0;                                            /* Add padding for better spacing */
+      }
+      .menu-toggle {
+        display: flex;                                              /* Show the menu toggle button on smaller screens */
+      }
+    }
+
+    .container {
+      display: grid;                                                /* Use grid layout for better responsiveness */
+      grid-template-columns: repeat(3, minmax(0, 1fr));             /* Adjusted minmax for better card sizing */
+      gap: 20px;                                                    /* Increased gap for better spacing between cards */
+      padding: 10px 10%;                                            /* Add padding to the sides for better spacing */
+    }
+
+    .card {
+      background: #fff;                                           /* Changed background to white for better contrast */
+      border-radius: 8px;                                           /* Added border radius for rounded corners */
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);                     /* Adjusted box shadow for a softer effect */
+      overflow: hidden;                                             /* Ensure content doesn't overflow the card */
+      display: flex;                                                /* Use flexbox for better alignment of content */
+      flex-direction: column;                                       /* Stack content vertically */
+
+      min-height: 500px;                                            /* Ensure cards have a minimum height */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;        /* Added transition for hover effects */
+    }
+
+    .card img {
+      width: 100%;                                                  /* Ensure images take full width of the card */
+      height: 380px;                                                /* Set a fixed height for images */
+      object-fit: cover;                                            /* Ensure images cover the area without distortion */
+      object-position: center;                                        /* Center the image within the card */
+      min-height: 380px;                                            /* Ensure images have a minimum height */
+    }
+
+    .card h2 {
+      margin: 10px;                                                 /* Adjusted margin for better spacing */
+      color: #006494;                                             /* Changed title color to match the header for consistency */
+    }
+
+    .card p { 
+      margin: 10px;                                                 /* Adjusted margin for better spacing */
+      flex-grow: 1;                                                 /* Allow the description to take up available space for better layout */
+    }
+
+    .card .preco {
+      font-weight: bold;                                            /* Made price bold for better emphasis */
+      margin: 10px;                                                 /* Adjusted margin for better spacing */
+      color: #006494;                                             /* Changed price color to match the header for consistency */
+
+      font-size: 1.2em;                                             /* Increased font size for better visibility */
+    }
+
+    .card .preco span {
+      font-style: italic;                                           /* Made the "per person" text italic for better emphasis */
+      font-weight: normal;                                          /* Made the "per person" text normal weight for better contrast */
+      font-size: 0.7em;                                             /* Adjusted font size for better readability */
+      color: #555;                                                /* Changed color to a darker gray for better contrast */
+    }
+
+    .card button {
+      background: #247194;                                        /* Changed button background color to match the header for consistency */
+      color: #fff;                                                /* Changed button text color to white for better contrast */
+      border: none;                                                 /* Removed border for a cleaner look */
+      width: 100%;                                                  /* Make button take full width of the card */
+      padding: 10px;                                                /* Adjusted padding for better button size */
+      cursor: pointer;                                              /* Changed cursor to pointer for better UX */
+      border-radius: 0 0 8px 8px;                                   /* Added border radius to the bottom of the button for rounded corners */
+    }
+
+    .card button:hover {
+      background: #006494;                                        /* Changed button background color on hover for better visual feedback */
+    }
+
+    .card:hover {
+      transform: translateY(-5px);                                  /* Added hover effect to lift the card slightly */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);                     /* Enhanced box shadow on hover for better visual feedback */
+    }
+
+    .lang-switch {
+      display: flex;                                                 /* Use flexbox for better alignment of language switch buttons */
+      gap: 10px;                                                     /* espaçamento entre bandeiras */
+    }
+
+    .lang-switch button {
+      background: none;                                              /* Remove background for a cleaner look */
+      border: none;                                                  /* Remove border for a cleaner look */
+      cursor: pointer;                                               /* Change cursor to pointer for better UX */
+      padding: 0;                                                    /* Remove padding for better alignment */
+    }
+
+    .lang-switch img {
+      width: 30px;                                                   /* tamanho das bandeiras */
+      height: 20px;                                                  /* tamanho das bandeiras */
+      object-fit: cover;                                             /* Ensure flags maintain their aspect ratio */
+      border-radius: 3px;                                            /* Cantos levemente arredondados */
+      transition: transform 0.2s ease;                               /* Added transition for hover effect */
+    }
+
+    .lang-switch img:hover {
+      transform: scale(1.1);                                         /* Efeito de zoom ao passar o mouse */
+    }
+
+    h1 {
+      margin-top: 20px;                                              /* Added margin to the top of the heading for better spacing */
+      font-size: 2em;                                                /* Increased font size for better visibility */
+    }
+
+    .container p {
+      font-size: 1em;                                                /* Adjusted font size for better readability */
+      color: #333;                                                 /* Changed text color to a darker gray for better contrast */
+    }
+
+    .info-passeio {
+      border-top: 1px solid #ddd;                                  /* linha superior */
+      border-bottom: 1px solid #ddd;                               /* linha inferior */
+      padding: 3px 0;                                                /* espaço interno entre as linhas */
+      margin: 10px 0;                                                /* separa do título e da descrição */
+      text-align: center;                                            /* centraliza os textos */
+      font-size: 0.85em;                                             /* levemente menor que o texto normal */
+    }
+
+    .info-passeio p {
+      display: flex;
+      align-items: center;
+      gap: 6px;            
+    }
+
+    /* Estilo para os ícones dentro de .info-passeio */
+    .info-passeio i {
+      color: #006494;                                              /* azul */
+      margin-right: 6px;                                             /* espaço entre ícone e texto */
+      font-size: 18px;                                               /* tamanho do ícone */
+    }
+
+    /* Botão do WhatsApp */
+    .whatsapp-button {
+      position: fixed;                                               /* fica fixo na tela */
+      bottom: 20px;                                                  /* distância da borda inferior */
+      right: 20px;                                                   /* distância da borda direita */
+      z-index: 1000;                                                 /* fica acima dos outros elementos */
+    }
+
+    .whatsapp-button img {
+      width: 60px;                                                   /* tamanho do ícone */
+      height: 60px;
+      border-radius: 50%;                                            /* deixa o ícone redondo */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);                       /* sombra suave */
+      transition: transform 0.3s ease;
+    }
+
+    .whatsapp-button img:hover {
+      transform: scale(1.1);                                         /* efeito de zoom ao passar o mouse */
+    }
+
+    /* Footer */
+    footer {
+      background: #006491;
+      color: #fff;
+      display: flex;
+      flex-direction: row;                                           /* força horizontal */
+      justify-content: space-between;                                /* distribui esquerda, centro e direita */
+      align-items: flex-start;                                       /* alinha ao topo */
+      padding: 20px 10%;
+      border-top: 2px solid #ddd;                                  /* linha separadora acima */
+    }
+
+    footer div {
+      margin: 0 10px;
+      flex: 0 0 auto;                                                /* impede que cresçam verticalmente */
+    }
+
+    .footer-left { text-align: left; }
+    .footer-center { text-align: center; }
+    .footer-right { text-align: right; }
+
+    .footer-center {
+      text-align: left;
+      display: flex;
+      flex-direction: column;                                        /* empilha os links */
+      gap: 6px;                                                      /* espaço entre eles */
+    }
+
+    .footer h3 {
+      margin: 0 0 5px 0;
+      font-size: 1.1em;
+      color: #fff;
+      text-align: left;
+    }
+
+    .footer-center a {
+      display: block;                                                /* cada link ocupa uma linha */
+      color: #fff;
+      text-decoration: none;
+      margin: 2px 0;
+    }
+
+    .footer-center a:hover {
+      text-decoration: underline;                                    /* opcional: destaque ao passar o mouse */
+    }
+
+    .footer-right img {
+      width: 40px;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+
+    p {
+      text-align: left;
+      margin:  5px 0;
+      line-height: 1.4;
+      font-weight: 400;                                              /* Regular para textos */
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+    footer {
+      flex-direction: column;                                        /* empilha os blocos no celular */
+      text-align: center;
+      }
+    .footer-left,
+    .footer-center,
+    .footer-right {
+      margin: 10px 0;
+      text-align: center;
+      }
+    }
+
+    .footer-creditos {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #6eb5d6;
+      margin-top: 0px;
+      width: 100%;
+      background-color: #006494;
+      padding: 5px 0;
+    }

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Transportation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/global.css">
+  <link rel="stylesheet" href="/contact.css">
+  <style>
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><img src="icons/logo1.png" alt="Logo"></div>
+
+    <!-- Bloco da direita -->
+    <div class="header-right">
+    <nav>
+      <ul>
+        <li><a href="index_en.html">Home</a></li>
+        <li><a href="passeios_en.html">Tours</a></li>
+        <li><a href="transporte_en.html">Transportation</a></li>
+        <li><a href="sobre_en.html">About us</a></li>
+        <li><a href="javascript:void(0)" id="openContact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="lang-switch">
+      <button onclick="window.location.href='transporte.html'"><img src="icons/br-flag.png" alt="Portugues"></button>
+      <button onclick="window.location.href='transporte_es.html'"><img src="icons/es-flag.png" alt="Espanhol"></button>
+      <button onclick="window.location.href='transporte_en.html'"><img src="icons/en-flag.png" alt="English"></button>
+    </div>
+    </div>
+  </header>
+
+  <h1 style="text-align: center; color: #006494;">Check out all available transportation options!</h1>
+
+  <div class="container">
+
+    <div class="card">
+      <img src="images_transp/spin.jpg" alt="Transporte 001">
+      <h2 id="transporte-nat-pipa">Transfer Airport NAT / Pipa</h2>
+      <p>Transportation service from Natal Airport to Pipa.</p>
+      <div class="info-passeio">
+        <p><i class="fa-solid fa-calendar"></i> Daily</p>
+        <p><i class="fas fa-clock"></i> Approximately 1h 30min.</p>
+        <p><i class="fa-solid fa-circle-user"></i> Guide</p>
+    </div>
+    <div class="preco">R$ 300,00 <span>from 1 - 3 ppl.</span></div>
+    <button onclick="consultar(this)">Check Availability</button>
+  </div>
+
+  <div class="card">
+    <img src="images_transp/spin.jpg" alt="Transporte 002">
+    <h2 id="transporte-nat-pipa">Transfer Airport NAT / Pipa</h2>
+    <p>Transportation service from Natal Airport to Pipa.</p>
+    <div class="info-passeio">
+      <p><i class="fa-solid fa-calendar"></i> Daily</p>
+      <p><i class="fas fa-clock"></i> Approximately 1h 30min.</p>
+      <p><i class="fa-solid fa-circle-user"></i> Guide</p>
+    </div>
+    <div class="preco">R$ 400,00 <span>from 4 - 6 ppl.</span></div>
+    <button onclick="consultar(this)">Check Availability</button>
+  </div>
+
+  <div class="card">
+    <img src="images_transp/van6.png" alt="Transporte 003">
+    <h2 id="transporte-nat-pipa">Transfer Airport NAT / Pipa</h2>
+    <p>Transportation service from Natal Airport to Pipa.</p>
+    <div class="info-passeio">
+      <p><i class="fa-solid fa-calendar"></i> Daily</p>
+      <p><i class="fas fa-clock"></i> Approximately 1h 30min.</p>
+      <p><i class="fa-solid fa-circle-user"></i> Guide</p>
+    </div>
+    <div class="preco">R$ 690,00 <span>from 7 - 12 ppl.</span></div>
+    <button onclick="consultar(this)">Check Availability</button>
+  </div>
+
+  <div class="card">
+      <img src="images_transp/spin.jpg" alt="Transporte 001">
+      <h2 id="transporte-nat-vila-gale">Transfer Airport NAT / Vila Galé</h2>
+      <p>Transportation service from Natal Airport to Vila Galé.</p>
+      <div class="info-passeio">
+        <p><i class="fa-solid fa-calendar"></i> Daily</p>
+        <p><i class="fas fa-clock"></i> Approximately 1h 30min.</p>
+        <p><i class="fa-solid fa-circle-user"></i> Guide</p>
+    </div>
+    <div class="preco">R$ 280,00 <span>from 1 - 3 ppl.</span></div>
+    <button onclick="consultar(this)">Check Availability</button>
+  </div>
+
+  <div class="card">
+    <img src="images_transp/spin.jpg" alt="Transporte 002">
+    <h2 id="transporte-nat-vila-gale">Transfer Airport NAT / Vila Galé</h2>
+    <p>Transportation service from Natal Airport to Vila Galé.</p>
+    <div class="info-passeio">
+      <p><i class="fa-solid fa-calendar"></i> Daily</p>
+      <p><i class="fas fa-clock"></i> Approximately 1h 30min.</p>
+      <p><i class="fa-solid fa-circle-user"></i> Guide</p>
+    </div>
+    <div class="preco">R$ 360,00 <span>from 4 - 6 ppl.</span></div>
+    <button onclick="consultar(this)">Check Availability</button>
+  </div>
+
+  <div class="card">
+    <img src="images_transp/van6.png" alt="Transporte 003">
+    <h2 id="transporte-nat-vila-gale">Transfer Airport NAT / Vila Galé</h2>
+    <p>Transportation service from Natal Airport to Vila Galé.</p>
+    <div class="info-passeio">
+      <p><i class="fa-solid fa-calendar"></i> Daily</p>
+      <p><i class="fas fa-clock"></i> Approximately 1h 30min.</p>
+      <p><i class="fa-solid fa-circle-user"></i> Guide</p>
+    </div>
+    <div class="preco">R$ 690,00 <span>from 7 - 12 ppl.</span></div>
+    <button onclick="consultar(this)">Check Availability</button>
+  </div>
+
+  <div class="card">
+      <img src="images_transp/spin.jpg" alt="Transporte 001">
+      <h2 id="transporte-jpa-pipa">Transfer Airport JPA / Pipa</h2>
+      <p>Transportation service from João Pessoa Airport to Pipa.</p>
+      <div class="info-passeio">
+        <p><i class="fa-solid fa-calendar"></i> Daily</p>
+        <p><i class="fas fa-clock"></i> Approximately 2h.</p>
+        <p><i class="fa-solid fa-circle-user"></i> Guide</p>
+    </div>
+    <div class="preco">R$ 380,00 <span>from 1 - 3 ppl.</span></div>
+    <button onclick="consultar(this)">Check Availability</button>
+  </div>
+
+  <div class="card">
+    <img src="images_transp/spin.jpg" alt="Transporte 002">
+    <h2 id="transporte-jpa-pipa">Transfer Airport JPA / Pipa</h2>
+    <p>Transportation service from João Pessoa Airport to Pipa.</p>
+    <div class="info-passeio">
+      <p><i class="fa-solid fa-calendar"></i> Daily</p>
+      <p><i class="fas fa-clock"></i> Approximately 2h.</p>
+      <p><i class="fa-solid fa-circle-user"></i> Guide</p>
+    </div>
+    <div class="preco">R$ 510,00 <span>from 4 - 6 ppl.</span></div>
+    <button onclick="consultar(this)">Check Availability</button>
+  </div>
+
+  <div class="card">
+    <img src="images_transp/van6.png" alt="Transporte 003">
+    <h2 id="transporte-jpa-pipa">Transfer Airport JPA / Pipa</h2>
+    <p>Transportation service from João Pessoa Airport to Pipa.</p>
+    <div class="info-passeio">
+      <p><i class="fa-solid fa-calendar"></i> Daily</p>
+      <p><i class="fas fa-clock"></i> Approximately 2h.</p>
+      <p><i class="fa-solid fa-circle-user"></i> Guide</p>
+      <!-- <p class="car"><i class="fa-solid fa-car"></i> Veículo: Van</p> -->
+    </div>
+    <div class="preco">R$ 1.350,00 <span>from 7 - 12 ppl.</span></div>
+    <button onclick="consultar(this)">Check Availability</button>
+  </div>
+
+  </div>
+  <script>
+  function consultar(botao) {
+    // pega o título do card (nome do transporte)
+    const card = botao.closest(".card");
+    const titulo = card.querySelector("h2").innerText;
+    const preco = card.querySelector(".preco").innerText; // valor + info
+
+    // monta a mensagem
+    const mensagem = `Hello, I want to inquire about the availability of "${titulo}" - ${preco}`;
+
+    // abre o WhatsApp com a mensagem
+    const numero = "5584991202411"; // seu número com DDI e DDD
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+    window.open(url, "_blank");
+  }
+</script>
+
+  <!-- Modal apenas com formulário -->
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <form class="contact-form" action="enviar.php" method="post">
+        <h2>LEAVE US A MESSAGE</h2>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" autocomplete="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" autocomplete="email" required>
+
+        <label for="phone">Phone / WhatsApp</label>
+        <input type="text" id="phone" name="phone" autocomplete="tel">
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" autocomplete="off" required></textarea>
+
+        <button type="submit">SEND MESSAGE</button>
+      </form>
+    </div>
+  </div>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const openBtn = document.getElementById("openContact");
+    const modal = document.getElementById("contactModal");
+    const closeBtn = document.querySelector(".close");
+    const form = document.querySelector(".contact-form");
+
+    if (openBtn && modal && closeBtn) {
+      openBtn.onclick = (e) => {
+        e.preventDefault(); // impede navegação
+        modal.style.display = "block";
+      };
+
+      closeBtn.onclick = () => {
+        modal.style.display = "none";
+      };
+
+      window.onclick = (event) => {
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      };
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();                                           // impede envio real
+        alert("Mensagem enviada com sucesso!");
+        form.reset();                                                 // limpa os campos
+        modal.style.display = "none";                                 // fecha o modal
+      });
+    }
+  });
+</script>
+
+  <a href="https://wa.me/5584991202411" class="whatsapp-button" target="_blank">
+  <img src="icons/social.png" alt="WhatsApp">
+  </a>
+
+<footer>
+  <div class="footer-left">
+    <h3>CompassPipa</h3>
+    <p>Rua Dr. Hélio Galvão, 100<br>
+    59178-000 Tibau do Sul - RN<br>
+    contato@compasspipa.com.br<br>
+    Tel: +55 (84) 99120-2411</p>
+  </div>
+
+  <div class="footer-center">
+    <h3>Informations</h3>
+    <a href="termos_en.html">Terms and Conditions</a>
+    <a href="politicas_en.html">Privacy Policy</a>
+  </div>
+
+  <div class="footer-right">
+    <h3>Payment Methods</h3>
+    <img src="icons/google-verificado.png" alt="Google Verified" style="height: 20px; width: 60px;">
+    <img src="icons/ssl-logos_orig.png" alt="Trusted Site">
+    <img src="icons/pix-icone.png" alt="Pix">
+    <img src="icons/cash.png" alt="Cash">
+  </div>
+</footer>
+
+<div class="footer-creditos">
+  Developed by hr.freitas
+</div>
+
+</body>
+</html>
