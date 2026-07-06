@@ -1,45 +1,48 @@
 <?php
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $nome = trim(strip_tags($_POST['name'] ?? ''));
+    $email = trim(filter_var($_POST['email'] ?? '', FILTER_SANITIZE_EMAIL));
+    $telefone = trim(strip_tags($_POST['phone'] ?? ''));
+    $mensagem = trim(strip_tags($_POST['message'] ?? ''));
 
-require 'vendor/autoload.php';                                          // se instalou via Composer
+    $destinatario = 'contato@compasspipa.com.br';
+    $assunto = 'Nova mensagem do site';
+    $corpo = "Nome: {$nome}\nEmail: {$email}\nTelefone: {$telefone}\n\nMensagem:\n{$mensagem}";
+    $headers = "From: {$email}\r\nReply-To: {$email}\r\nContent-Type: text/plain; charset=UTF-8";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nome = $_POST["name"];
-    $email = $_POST["email"];
-    $telefone = $_POST["phone"];
-    $mensagem = $_POST["message"];
+    if (file_exists(__DIR__ . '/vendor/autoload.php')) {
+        require __DIR__ . '/vendor/autoload.php';
 
-    $mail = new PHPMailer(true);
+        if (class_exists('PHPMailer\\PHPMailer\\PHPMailer')) {
+            $mail = new PHPMailer(true);
 
-    try {
-        // Configuração SMTP da HostGator
-        $mail->isSMTP();
-        $mail->Host       = 'mail.seudominio.com';                      // ex: mail.compasspipa.com.br
-        $mail->SMTPAuth   = true;
-        $mail->Username   = 'reservas@seudominio.com';                  // seu e-mail criado no cPanel
-        $mail->Password   = 'SUA_SENHA';                                // senha do e-mail
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port       = 587;
+            try {
+                $mail->isSMTP();
+                $mail->Host = 'mail.seudominio.com';
+                $mail->SMTPAuth = true;
+                $mail->Username = 'reservas@seudominio.com';
+                $mail->Password = 'SUA_SENHA';
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+                $mail->Port = 587;
+                $mail->setFrom('reservas@seudominio.com', 'Site CompassPipa');
+                $mail->addAddress($destinatario);
+                $mail->isHTML(false);
+                $mail->Subject = $assunto;
+                $mail->Body = $corpo;
+                $mail->send();
+                echo 'Mensagem enviada com sucesso!';
+                exit;
+            } catch (Exception $e) {
+                echo 'Erro ao enviar: ' . $mail->ErrorInfo;
+                exit;
+            }
+        }
+    }
 
-        // Remetente e destinatário
-        $mail->setFrom('reservas@seudominio.com', 'Site CompassPipa');
-        $mail->addAddress('reservas@seudominio.com');                   // para onde vai a mensagem
-
-        // Conteúdo
-        $mail->isHTML(true);
-        $mail->Subject = 'Nova mensagem do site';
-        $mail->Body    = "
-            <strong>Nome:</strong> $nome <br>
-            <strong>Email:</strong> $email <br>
-            <strong>Telefone:</strong> $telefone <br>
-            <strong>Mensagem:</strong><br>$mensagem
-        ";
-
-        $mail->send();
-        echo "Mensagem enviada com sucesso!";
-    } catch (Exception $e) {
-        echo "Erro ao enviar: {$mail->ErrorInfo}";
+    if (function_exists('mail') && @mail($destinatario, $assunto, $corpo, $headers)) {
+        echo 'Mensagem enviada com sucesso!';
+    } else {
+        echo 'Não foi possível enviar a mensagem no momento. Tente novamente mais tarde.';
     }
 }
 ?>

@@ -21,13 +21,9 @@
   max-width: 500px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   animation: fadeIn 0.3s ease;
-
-
-  width: 90%;
-  max-width: 500px;
-  position: relative; /* necessário para o z-index funcionar corretamente */
-  overflow: visible; /* permite que o conteúdo do modal seja visível */
-  z-index: 10000; /* garante que o conteúdo do modal fique acima do fundo */
+  position: relative;
+  overflow: visible;
+  z-index: 10000;
 }
 /* feedback de envio */
 #form-status p {
