@@ -18,10 +18,12 @@
     }
 
     html, body {
-  height: 100vh;       /* ocupa 100% da altura da viewport */
-  margin: 0;           /* remove margens padrão */
-  overflow: hidden;    /* impede rolagem */
-}
+    min-height: 100vh;       /* ocupa 100% da altura da viewport */
+    /* margin: 0;           /* remove margens padrão */
+    display: flex;       /* usa flexbox para layout */
+    overflow: hidden;    /* impede rolagem */
+    flex-direction: column;  /* organiza elementos em coluna */
+    }
 
     h1, h2, h3 {
       font-weight: 700;                                    /* Negrito para títulos */
@@ -33,7 +35,7 @@
 
     main {
       flex: 1;
-      padding: 20px;
+      /* padding: 20px; */
     }
     header {
       background: #006491;                               /* Changed header background color to a more vibrant orange */
