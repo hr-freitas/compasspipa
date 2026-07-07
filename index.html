@@ -11,7 +11,7 @@
     /* Botão do WhatsApp */
     .whatsapp-button {
     position: fixed;                                                  /* fica fixo na tela */
-    top: 70px;                                                        /* distância da borda inferior */
+    bottom: 20px;                                                     /* distância da borda inferior */
     right: 20px;                                                      /* distância da borda direita */
     z-index: 1000;                                                    /* fica acima dos outros elementos */
     }
@@ -25,52 +25,12 @@
     .whatsapp-button img:hover {
       transform: scale(1.1);  /* efeito de zoom ao passar o mouse */
     }
-
-  .menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-    margin-right: 20px;
-    margin-top: -5px;
-
-    margin: 0 0 10px 0; /* margem inferior para espaçamento */
-  }
-
-  .menu-toggle span {
-    width: 25px;
-    height: 3px;
-    background: #fff;
-    border-radius: 2px;
-  }
-
-@media (max-width: 768px) {
-  nav {
-    display: none;
-    flex-direction: column;
-    background: #006491;
-    position: absolute;
-    top: 50px; /* altura do header */
-    right: 0;
-    width: 100%;
-
-    flex: 0 0 auto;
-  }
-
-  nav a {
-    text-align: center;
-    padding: 12px 0;
-    border-top: 1px solid #36b3ec;
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
-
-  nav.show {
-    display: flex;
-  }
-}
+    .menu-toggle span { 
+      width:25px; 
+      height:3px; 
+      background:#fff; 
+      border-radius:2px; 
+    }
   </style>
   </head>
   <body>

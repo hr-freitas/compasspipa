@@ -42,10 +42,11 @@ html, body {
 
 /* Logo */
 .logo img {
-  height: 80px;
+  height: auto;
+  max-height: 60px;
   object-fit: contain;
-  margin-top: 8px;
-  margin-left: 70px;
+  margin-top: 0;
+  margin-left: 20px;
 }
 
 /* Header right */
@@ -298,28 +299,28 @@ nav a:hover {
 /* Layout mobile */
 @media screen and (max-width: 768px) {
   header {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     height: auto;
-    padding: 10px;
+    padding: 8px 12px;
   }
 
-  .logo,
-  .nav-wrapper,
-  .lang-switch,
-  .whatsapp-btn {
-    margin: 10px 0;
-    width: 100%;
-    text-align: center;
-  }
+  /* keep logo at left and hamburger + nav on the right */
+  .logo { order: 1; margin: 0; }
+  .menu-toggle { order: 2; margin: 0 8px; }
+  .header-right { order: 3; display: flex; align-items: center; gap: 8px; }
 
-  nav a {
-    display: block;
-    text-align: center;
-    padding: 10px;
-  }
+  .logo img { max-height: 56px; }
 
-  .lang-switch {
-    justify-content: center;
-  }
+  /* nav hidden by default on small screens, revealed with .show */
+  nav, nav ul { display: none; }
+  nav.show, nav.show ul { display: flex; flex-direction: column; position: absolute; left: 0; right:0; top: 60px; background: #006491; z-index:2000; }
+
+  nav a { display: block; text-align: center; padding: 10px; }
+
+  .lang-switch img { width: 28px; height: 28px; }
+
+  /* adjust carousel top spacing to match header on small screens */
+  .carousel { margin-top: 70px; height: calc(100vh - 70px); }
 }

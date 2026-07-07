@@ -31,9 +31,9 @@
     }
 
     header {
-      background: #006491;                                        /* Changed header background color to a more vibrant orange */
-      color: #fff;                                                /* Changed text color to white for better contrast */
-      padding: 15px;                                                /* Increased padding for better spacing */
+      background: #006491;
+      color: #fff;
+      padding: 10px 12px;
       align-items: center;                                          /* Centered header content vertically */
       justify-content: space-between;                               /* Space out logo and navigation for better layout */
       display: flex;                                                /* Use flexbox for better alignment of header content */
@@ -42,7 +42,7 @@
       top: 0;                                                       /* Ensure header stays at the top of the page */
       left: 0;                                                      /* Ensure header stays at the left of the page */
       width: 100%;                                                  /* Make header take full width of the page */ 
-      height: 30px;                                                 /* Set a fixed height for the header for better consistency */
+      height: auto;
       z-index: 1000;                                                /* Ensure header stays above other content */
     }
 
@@ -58,9 +58,10 @@
     }
 
     .logo img {
-      height: 90px;                                                 /* Set a fixed height for the logo for better consistency */
-      margin: 0;                                                    /* Removed default margin for better layout control */
-      object-fit: contain;                                          /* Ensure logo image maintains its aspect ratio */
+      max-height: 60px;
+      height: auto;
+      margin: 0 10px 0 0;
+      object-fit: contain;
     }
 
     nav ul {
@@ -264,10 +265,16 @@
 <body>
   <header>
     <div class="logo"><img src="icons/logo1.png" alt="Logo"></div>
+    <!-- Botão hamburger -->
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
     <!-- Bloco da direita -->
     <div class="header-right">
-    <nav>
+    <nav id="navMenu">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="passeios.html">Passeios</a></li>
