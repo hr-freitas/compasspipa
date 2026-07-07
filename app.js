@@ -5,6 +5,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const list = document.querySelector('.list');
   const runningTime = document.querySelector('.carousel .timeRunning');
 
+  // initialize mobile menu toggle even if carousel is not present
+  const menuToggleInit = () => {
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    if (menuToggle && navMenu) {
+      menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('show');
+      });
+
+      navMenu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => navMenu.classList.remove('show'));
+      });
+    }
+  };
+
+  menuToggleInit();
+
   if (!carousel || !list || !nextBtn || !prevBtn || !runningTime) {
     return;
   }
@@ -51,18 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
   nextBtn.addEventListener('click', () => showSlider('next'));
   prevBtn.addEventListener('click', () => showSlider('prev'));
 
-  const menuToggle = document.getElementById('menuToggle');
-  const navMenu = document.getElementById('navMenu');
-
-  if (menuToggle && navMenu) {
-    menuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('show');
-    });
-
-    navMenu.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => navMenu.classList.remove('show'));
-    });
-  }
+  // menu already initialized above (menuToggleInit)
 
   resetTimeAnimation();
   runNextAuto = setTimeout(() => {
