@@ -161,10 +161,11 @@
 
     /* Botão do WhatsApp */
     .whatsapp-button {
-      position: fixed;                                        /* fica fixo na tela */
-      bottom: 20px;                                           /* distância da borda inferior */
-      right: 20px;                                            /* distância da borda direita */
-      z-index: 2000;                                          /* fica acima dos outros elementos */
+      position: static;                                       /* keep in page flow */
+      align-self: flex-end;                                   /* align to the right */
+      margin: 20px 20px 0 0;                                  /* spacing above footer */
+      display: block;
+      z-index: 2000;                                          /* keep above other elements if needed */
     }
 
     .whatsapp-button img {
@@ -189,13 +190,6 @@
       align-items: flex-start;                                /* alinha ao topo */
       padding: 20px 10%;
       border-top: 2px solid #ddd;                           /* linha separadora acima */
-
-
-      position: fixed;   /* fixa na tela */
-      bottom: 0;         /* cola na borda inferior */
-      left: 0;
-      width: 100%;       /* ocupa toda a largura */
-      z-index: 1010;     /* fica acima dos outros elementos */
       gap: 250px;          /* espaço entre os blocos */
     }
 
@@ -249,8 +243,12 @@
     /* Responsividade */
     @media (max-width: 768px) {
     footer {
+      position: static;                                     /* allow footer to scroll with content */
+      bottom: auto;
+      width: auto;
       flex-direction: column;                               /* empilha os blocos no celular */
       text-align: center;
+      padding: 20px 16px;
       }
     .footer-left,
     .footer-center,
@@ -292,10 +290,9 @@
       .header-right { gap: 10px; margin-right: 12px; }
       .lang-switch { gap: 8px; }
       .sobre-texto { padding: 0 16px; margin: 0 auto 120px auto; max-width: 100%; }
-      /* ensure content is not hidden behind fixed footer */
-      body { padding-bottom: 160px; }
+      body { padding-bottom: 20px; }
       .sobre-texto p { font-size: 16px; line-height: 1.5; }
-      footer { padding: 16px; gap: 12px; flex-direction: column; align-items: center; }
+      footer { position: static !important; bottom: auto; width: auto; padding: 16px; gap: 12px; flex-direction: column; align-items: center; }
     }
   </style>
 </head>
