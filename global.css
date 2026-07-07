@@ -148,9 +148,16 @@
 
     .container {
       display: grid;                                                /* Use grid layout for better responsiveness */
-      grid-template-columns: repeat(3, minmax(0, 1fr));             /* Adjusted minmax for better card sizing */
+      grid-template-columns: 1fr;                                   /* Default to single column for mobile-first design */
       gap: 20px;                                                    /* Increased gap for better spacing between cards */
       padding: 10px 10%;                                            /* Add padding to the sides for better spacing */
+    }
+
+    /* Desktop: three column layout */
+    @media (min-width: 769px) {
+      .container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
     }
 
     .card {
