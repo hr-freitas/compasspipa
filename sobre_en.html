@@ -18,6 +18,10 @@
       padding-top: 80px;                                   /* Added padding to the top to prevent content from being hidden behind the header */
     }
 
+    html {
+      background: #f7f6f6;
+    }
+
     html, body {
       min-height: 100vh;       /* ocupa 100% da altura da viewport */
       display: flex;       /* usa flexbox para layout */
@@ -285,12 +289,12 @@
       header { padding: 10px 12px; align-items: center; }
       .logo img { max-height: 56px; margin-left: 12px; }
       .menu-toggle { display: flex; margin: 0 8px; }
-      .header-right { gap: 10px; margin-right: 12px; }
-      .lang-switch { gap: 8px; }
-      .sobre-texto { padding: 0 16px; margin: 0 auto 120px auto; max-width: 100%; }
-      body { padding-bottom: 20px; }
+      .header-right { gap: 12px; margin-right: 12px; }
+      .lang-switch { display: flex; justify-content: space-between; width: 120px; gap: 8px; margin-right: 12px; }
+      .sobre-texto { padding: 0 18px; margin: 0 auto 30px auto; max-width: 100%; }
+      body { padding-bottom: 0; }
       .sobre-texto p { font-size: 16px; line-height: 1.5; }
-      footer { position: static !important; bottom: auto; width: auto; padding: 16px; gap: 12px; flex-direction: column; align-items: center; }
+      footer { position: static !important; bottom: auto; width: auto; padding: 16px; gap: 12px; flex-direction: column; align-items: center; margin-bottom: 0; }
     }
   </style>
 </head>

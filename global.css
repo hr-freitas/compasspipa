@@ -140,6 +140,8 @@
 
       .header-right { gap: 12px; margin-right: 12px; }
 
+      .lang-switch { display: flex; justify-content: space-between; width: 120px; gap: 8px; margin-right: 12px; }
+
       .lang-switch img { width: 34px; height: 24px; }
 
       /* make nav links easier to tap */
