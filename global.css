@@ -127,6 +127,23 @@
       .info-passeio { font-size: 0.95rem; }
       .card .preco { font-size: 1.1rem; margin: 12px; }
       .card button { padding: 12px; font-size: 1rem; }
+
+      /* Mobile header adjustments: bigger and better organized */
+      header {
+        padding: 14px 16px;
+        align-items: center;
+      }
+
+      .logo img { max-height: 72px; }
+
+      .menu-toggle span { width: 30px; height: 4px; }
+
+      .header-right { gap: 12px; margin-right: 12px; }
+
+      .lang-switch img { width: 34px; height: 24px; }
+
+      /* make nav links easier to tap */
+      nav ul li a { padding: 12px 16px; font-size: 1.05rem; }
     }
 
     .container {

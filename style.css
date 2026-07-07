@@ -320,7 +320,7 @@ nav a:hover {
     align-items: center;
     justify-content: space-between;
     height: auto;
-    padding: 8px 12px;
+    padding: 14px 16px;
   }
 
   /* keep logo at left and hamburger + nav on the right */
@@ -329,16 +329,16 @@ nav a:hover {
   .menu-toggle { display: flex; }
   .header-right { order: 3; display: flex; align-items: center; gap: 8px; }
 
-  .logo img { max-height: 56px; }
+  .logo img { max-height: 72px; }
 
   /* nav hidden by default on small screens, revealed with .show */
   nav, nav ul { display: none; }
   nav.show, nav.show ul { display: flex; flex-direction: column; position: absolute; left: 0; right:0; top: 60px; background: #006491; z-index:2000; }
 
-  nav a { display: block; text-align: center; padding: 10px; }
+  nav a { display: block; text-align: center; padding: 12px 16px; font-size: 1.05rem; }
 
-  .lang-switch img { width: 28px; height: 28px; }
+  .lang-switch img { width: 34px; height: 24px; }
 
   /* adjust carousel top spacing to match header on small screens */
-  .carousel { margin-top: 70px; height: calc(100vh - 70px); }
+  .carousel { margin-top: 80px; height: calc(100vh - 80px); }
 }
