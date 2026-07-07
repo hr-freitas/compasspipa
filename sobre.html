@@ -2,8 +2,10 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sobre</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="contact.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -20,8 +22,8 @@
       min-height: 100vh;          /* ocupa 100% da altura da viewport */
       margin: 0;               /* remove margens padrão */
       display: flex;              /* usa flexbox para layout */
-      /*overflow: hidden;           /* impede rolagem */
       flex-direction: column;     /* organiza elementos em coluna */
+      overflow: auto;             /* permite rolagem em mobile */
     }
 
     h1, h2, h3 {
@@ -181,7 +183,7 @@
       bottom: 0;         /* cola na borda inferior */
       left: 0;
       width: 100%;       /* ocupa toda a largura */
-      z-index: 1000;     /* fica acima dos outros elementos */
+      z-index: 1010;     /* fica acima dos outros elementos */
       gap: 250px;          /* espaço entre os blocos */
     }
 
@@ -269,6 +271,17 @@
       margin-bottom: 20px;                                    /* espaço entre os parágrafos */
       line-height: 1.6;                                       /* altura da linha para leitura confortável */
       color: #333;
+    }
+    /* Mobile adjustments for about page */
+    @media (max-width: 768px) {
+      header { padding: 10px 12px; align-items: center; }
+      .logo img { max-height: 56px; margin-left: 12px; }
+      .menu-toggle { display: flex; margin: 0 8px; }
+      .header-right { gap: 10px; margin-right: 12px; }
+      .lang-switch { gap: 8px; }
+      .sobre-texto { padding: 0 16px; margin: 0 auto 120px auto; max-width: 100%; }
+      .sobre-texto p { font-size: 16px; line-height: 1.5; }
+      footer { padding: 16px; gap: 10px; flex-direction: column; align-items: center; }
     }
   </style>
 </head>
@@ -375,6 +388,7 @@
   <a href="https://wa.me/5584991202411" class="whatsapp-button" target="_blank">
   <img src="icons/social.png" alt="WhatsApp">
   </a>
+  <script src="app.js"></script>
 
 <footer>
   <div class="footer-left">
