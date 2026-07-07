@@ -94,6 +94,16 @@
       display: none;                                       /* Hide the menu toggle button by default */
       flex-direction: column;                              /* Stack the lines vertically */
       cursor: pointer;                                     /* Change cursor to pointer for better UX */
+      z-index: 2100;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      border-radius: 2px;
+      margin: 4px 0;
     }
 
     /* Responsividade para dispositivos móveis */
@@ -114,6 +124,8 @@
       .menu-toggle {
         display: flex;                                     /* Show the menu toggle button on smaller screens */
       }
+      /* show nav when JS toggles .show */
+      nav.show, nav.show ul { display: flex; flex-direction: column; position: absolute; left:0; right:0; top:60px; background: #006491; z-index:2000; }
     }
    
     .lang-switch {
@@ -277,8 +289,10 @@
       .header-right { gap: 10px; margin-right: 12px; }
       .lang-switch { gap: 8px; }
       .sobre-texto { padding: 0 16px; margin: 0 auto 120px auto; max-width: 100%; }
+      /* ensure content is not hidden behind fixed footer */
+      body { padding-bottom: 160px; }
       .sobre-texto p { font-size: 16px; line-height: 1.5; }
-      footer { padding: 16px; gap: 10px; flex-direction: column; align-items: center; }
+      footer { padding: 16px; gap: 12px; flex-direction: column; align-items: center; }
     }
   </style>
 </head>
