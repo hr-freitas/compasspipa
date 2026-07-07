@@ -57,6 +57,23 @@ html, body {
   padding-right: 20px;
 }
 
+/* Hamburger (hidden by default, shown on small screens) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 2100;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  display: block;
+}
+
 /* Navegação */
 .nav-wrapper {
   margin-right: 40px;
@@ -309,6 +326,7 @@ nav a:hover {
   /* keep logo at left and hamburger + nav on the right */
   .logo { order: 1; margin: 0; }
   .menu-toggle { order: 2; margin: 0 8px; }
+  .menu-toggle { display: flex; }
   .header-right { order: 3; display: flex; align-items: center; gap: 8px; }
 
   .logo img { max-height: 56px; }
