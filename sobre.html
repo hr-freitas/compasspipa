@@ -57,6 +57,8 @@
       width: 100%;                                         /* Make header take full width of the page */ 
       height: auto;
       z-index: 1000;                                       /* Ensure header stays above other content */
+
+      min-height: 80px;
     }
     .header-right {
       display: flex;                                       /* Use flexbox for better alignment of right-side header content */
@@ -114,25 +116,48 @@
 
     /* Responsividade para dispositivos móveis */
     @media (max-width: 768px) {
-      nav ul {
-        display: none;                                     /* Hide the navigation menu on smaller screens */
-        flex-direction: column;                            /* Stack the navigation items vertically */
-        background: #006491;                             /* Change background color for better contrast */
-        position: absolute;                                /* Position the menu absolutely for better control */
-        top: 60px;                                         /* Position the menu below the header */
-        right: 0;                                          /* Align the menu to the right */
-        width: 100%;                                       /* Make the menu take full width of the screen */
-      }
-      nav ul li {
-        text-align: center;                                /* Center the navigation items */
-        padding: 10px 0;                                   /* Add padding for better spacing */
-      }
-      .menu-toggle {
-        display: flex;                                     /* Show the menu toggle button on smaller screens */
-      }
-      /* show nav when JS toggles .show */
-      nav.show, nav.show ul { display: flex; flex-direction: column; position: absolute; left:0; right:0; top:60px; background: #006491; z-index:2000; }
-    }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;       /* centraliza horizontalmente */
+    justify-content: flex-start;
+    background: #006491;
+    position: absolute;
+    top: 80px;                 /* abaixo do header */
+    right: 100px;                   /* ajusta a posição à direita */
+    left: 0;
+    width: 100%;
+  }
+
+  nav ul li {
+    width: 100%;               /* ocupa toda a largura */
+    display: flex;             /* usa flex para alinhar */
+    justify-content: center;   /* centraliza o link dentro do li */
+    padding: 10px 0;
+  }
+
+  nav ul li a {
+    display: flex;
+    margin: 0 auto;
+    padding: 10px 20px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav.show, nav.show ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50px;                 /* mesmo valor do nav ul */
+    background: #006491;
+    z-index: 2000;
+    align-items: center;       /* garante centralização */
+  }
+}
    
     .lang-switch {
       display: flex;                                         /* Use flexbox for better alignment of language switch buttons */
