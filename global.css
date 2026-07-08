@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-   body {
+body {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   margin: 0;
@@ -14,14 +14,14 @@ h1, h2, h3 { font-weight: 700; }
 header {
   background: #006491;
   color: #fff;
-  padding: 10px 12px;
+  padding: 0 20px; /* 10 12 */
   align-items: center;
   justify-content: space-between;
   display: flex;
   position: fixed;
   top: 0; left: 0;
   width: 100%;
-  height: auto;
+  height: 60px;
   z-index: 1000;
 }
 
@@ -32,8 +32,14 @@ header {
   margin-right: 60px;
 }
 
-.logo { margin-right: 0px; margin-top: 10px; }
-.logo img { max-height: 60px; height: auto; margin: 0 10px 0 0; object-fit: contain; }
+.logo img { 
+  height: auto;
+  max-height: 72px;
+  object-fit: contain;
+  margin-top: 5px;
+  /*margin: 0 10px 0 0;*/
+  margin-left: 20px;
+}
 
 nav ul {
   list-style: none;
@@ -46,7 +52,6 @@ nav ul {
 nav ul li a {
   color: #fff;
   text-decoration: none;
-  font-weight: bold;
   padding: 8px 20px;
   border-radius: 5px;
   transition: background 0.3s ease, color 0.3s ease;
@@ -68,42 +73,97 @@ nav ul li a:active { background: #24a2dd; }
     right: 0;
     width: 100%;
   }
+
   nav ul li { 
     text-align: center; 
     padding: 10px 0; 
   }
-  .menu-toggle { 
-    display: flex; }
+
+  .menu-toggle { display: flex; }
+
   nav.show ul { 
     display: flex; 
     flex-direction: column; }
 
-  h1 { margin: 0px; }.section-title { margin-top: 40px; }
-  .container { grid-template-columns: 1fr; padding: 10px 12px; gap: 16px; }
-  .card { min-height: auto; padding-bottom: 0; }
-  .card img { width: 100%; height: auto; max-height: 240px; object-fit: cover; }
-  .card h2 { font-size: 1.25rem; margin: 12px; }
-  .card p { font-size: 1rem; margin: 0 12px 12px 12px; }
-  .info-passeio { font-size: 0.95rem; }
-  .card .preco { font-size: 1.1rem; margin: 12px; }
-  .card button { padding: 12px; font-size: 1rem; }
-  header { padding: 14px 16px; align-items: center; }
-  .logo img { max-height: 72px; }
+  h1 { margin: 0px; }
+    .section-title { margin-top: 40px; }
 
-  .menu-toggle span { width: 30px; height: 4px; background: #fff; border-radius: 2px; margin: 4px 0; }
+  .container { 
+    grid-template-columns: 1fr; 
+    padding: 10px 12px; 
+    gap: 16px; 
+    }
 
-  .header-right { gap: 12px; margin-right: 12px; }
-  .lang-switch { display: flex; justify-content: space-between; width: 120px; gap: 8px; margin-right: 12px; }
-  .lang-switch img { width: 34px; height: 24px; } /* versão mobile perfeita */
+  .card { 
+    min-height: auto; 
+    padding-bottom: 0; 
+  }
+  .card img { 
+    width: 100%; 
+    height: auto; 
+    max-height: 240px; 
+    object-fit: cover; 
+  }
+  .card h2 { 
+    font-size: 1.25rem; 
+    margin: 12px; 
+  }
+  .card p { 
+    font-size: 1rem; 
+    margin: 0 12px 12px 12px; 
+  }
+  .info-passeio { 
+    font-size: 0.95rem; 
+  }
+  .card .preco { 
+    font-size: 1.1rem; 
+    margin: 12px; 
+  }
+  .card button { 
+    padding: 12px; 
+    font-size: 1rem; 
+  }
+  header { 
+    padding: 14px 16px; 
+    align-items: center; 
+  }
+  .logo img { 
+    max-height: 72px; 
+  }
+  .menu-toggle span { 
+    width: 30px; 
+    height: 4px; 
+    background: #fff; 
+    border-radius: 2px; 
+    margin: 4px 0; 
+  }
 
-  nav ul li a { padding: 12px 16px; font-size: 1.05rem; }
+  .header-right { 
+    gap: 12px; 
+    margin-right: 12px; }
+  .lang-switch { 
+    display: flex; 
+    justify-content: space-between; 
+    width: 120px; 
+    gap: 10px; 
+    margin-right: 12px;
+  }
+  .lang-switch img { 
+    width: 34px; 
+    height: 24px; 
+  } /* versão mobile perfeita */
+
+  nav ul li a { 
+    padding: 12px 16px; 
+    font-size: 1.05rem; 
+  }
 }
 
 /* Desktop */
 @media (min-width: 769px) {
   .lang-switch img {
-    width: 22px;   /* ajuste para desktop */
-    height: 16px;
+    width: 30px;   /* ajuste para desktop 22 16 */
+    height: 20px;
     object-fit: cover;
     border-radius: 3px;
     transition: transform 0.2s ease;

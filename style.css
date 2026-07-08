@@ -21,18 +21,15 @@ header {
   align-items: center;
   justify-content: space-between;
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 100%;
   height: 60px;
   z-index: 1000;
-  transition: background 0.3s ease;
-  backdrop-filter: blur(4px);
+  /*transition: background 0.3s ease; */
+  /*backdrop-filter: blur(4px); */
 }
 
-header:hover {
-  background: rgba(0, 100, 145, 0.8);
-}
+/*header:hover {background: rgba(0, 100, 145, 0.8); }*/
 
 html, body {
   height: 100%;
@@ -42,11 +39,11 @@ html, body {
 
 /* Logo */
 .logo img {
-  height: auto;
-  max-height: 60px;
+  height: auto;                             /* mantém a proporção da imagem */
+  max-height: 72px;                         /* controla a altura máxima da logo */
   object-fit: contain;
-  margin-top: 0;
-  margin-left: 20px;
+  margin-top: 5px;                          /* controla altura da logo */
+  margin-left: 20px;                        /* controla a distância da logo em relação à borda esquerda */
 }
 
 /* Header right */
@@ -76,9 +73,7 @@ html, body {
 }
 
 /* Navegação */
-.nav-wrapper {
-  margin-right: 40px;
-}
+.nav-wrapper {margin-right: 40px; }
 
 nav a {
   color: #fff;
@@ -120,9 +115,7 @@ nav a:hover {
   transition: transform 0.2s ease;
 }
 
-.lang-switch img:hover {
-  transform: scale(1.1);
-}
+.lang-switch img:hover {transform: scale(1.1); }
 
 /* Carousel */
 .carousel {
@@ -153,7 +146,7 @@ nav a:hover {
   background-position: center;
 }
 
-/* Defina aqui suas imagens */
+/* Definição das imagens do carrossel */
 .carousel .list .item:nth-child(1) { background-image: url("images/foto1.jpg"); }
 .carousel .list .item:nth-child(2) { background-image: url("images/foto2.jpg"); }
 .carousel .list .item:nth-child(3) { background-image: url("images/foto3.jpg"); }
@@ -210,9 +203,7 @@ nav a:hover {
   display: none;
 }
 
-.list .item:nth-child(2) .content {
-  display: block;
-}
+.list .item:nth-child(2) .content {display: block; }
 
 .content .title {
   font-size: 100px;
@@ -314,7 +305,6 @@ nav a:hover {
   .content .btn button { padding: 10px 15px; font-size: 14px; }
 }
 
-
  /* Ajuste específico para o botão hamburger */
   .hamburger, #menu-toggle {
     width: 10px;
@@ -322,7 +312,6 @@ nav a:hover {
     font-size: 20px; /* se for ícone via fonte */
     padding: 4px;
   }
-
 
 /* Layout mobile */
 @media screen and (max-width: 768px) {
@@ -335,28 +324,63 @@ nav a:hover {
   }
 
   /* keep logo at left and hamburger + nav on the right */
-  .logo { order: 1; margin: 0; }
+  .logo { 
+    order: 1; 
+    margin: 0; 
+  }
   .menu-toggle { order: 2; margin: 0 12px; }
   .menu-toggle { display: flex; }
-  .header-right { order: 3; display: flex; align-items: center; gap: 10px; }
+  .header-right { 
+    order: 3; 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+  }
 
   .logo img { max-height: 72px; }
 
-  .menu-toggle span { width: 30px; height: 4px; background: #fff; border-radius: 2px; margin: 4px 0; }
+  .menu-toggle span { 
+    width: 30px; 
+    height: 4px; 
+    background: #fff; 
+    border-radius: 2px; 
+    margin: 4px 0; 
+    }
 
   /* nav hidden by default on small screens, revealed with .show */
   nav, nav ul { display: none; }
-  nav.show, nav.show ul { display: flex; flex-direction: column; position: absolute; left: 0; right:0; top: 60px; background: #006491; z-index:2000; }
+  nav.show, nav.show ul { 
+    display: flex; 
+    flex-direction: column; 
+    position: absolute; 
+    left: 0; 
+    right:0; 
+    top: 60px; 
+    background: #006491; 
+    z-index:2000; 
+  }
 
-  nav a { display: block; text-align: center; padding: 12px 16px; font-size: 1.05rem; }
+  nav a { 
+    display: block; 
+    text-align: center; 
+    padding: 12px 16px; 
+    font-size: 1.05rem; 
+  }
 
-  .lang-switch img { width: 30px; height: 30px; border-radius: 8px; }
+  .lang-switch img { 
+    width: 30px; 
+    height: 30px; 
+    border-radius: 8px; 
+  }
 
   /* add a small inset so flags aren't flush to the right edge */
   .lang-switch { margin-left: 6px; }
 
   /* adjust carousel top spacing to match header on small screens */
-  .carousel { margin-top: 80px; height: calc(100vh - 80px); }
+  .carousel { 
+    margin-top: 80px; 
+    height: calc(100vh - 80px); 
+  }
 
   /* carousel captions left as in desktop rules; active slide controls visibility via existing selectors/JS */
 }
