@@ -25,6 +25,16 @@
   overflow: visible;
   z-index: 10000;
 }
+
+@media screen and (max-width: 768px) {
+  .modal-content {
+    width: 95%;          /* ocupa quase toda a largura, mas não 100% */
+    max-width: 400px;    /* limite para não ficar exagerado */
+    margin: 20px auto;   /* auto centraliza na horizontal */
+    padding: 20px;       /* ajuste interno */
+  }
+}
+
 /* feedback de envio */
 #form-status p {
   margin-top: 15px;

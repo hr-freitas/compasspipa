@@ -9,6 +9,7 @@ body {
 }
 
 h1, h2, h3 { font-weight: 700; }
+
 .highlight { font-weight: 500; }
 
 header {
@@ -163,7 +164,7 @@ nav ul li a:active { background: #24a2dd; }
 @media (min-width: 769px) {
   .lang-switch img {
     width: 30px;   /* ajuste para desktop 22 16 */
-    height: 20px;
+    height: 30px;
     object-fit: cover;
     border-radius: 3px;
     transition: transform 0.2s ease;
@@ -208,8 +209,16 @@ nav ul li a:active { background: #24a2dd; }
 .card button:hover { background: #006494; }
 .card:hover { transform: translateY(-5px); box-shadow: 0 4px 12px rgba(0,0,0,0.5); }
 
-.lang-switch { display: flex; gap: 10px; }
-.lang-switch button { background: none; border: none; cursor: pointer; padding: 0; }
+.lang-switch { 
+  display: flex; 
+  gap: 10px; 
+}
+.lang-switch button { 
+  background: none; 
+  border: none; 
+  cursor: pointer; 
+  padding: 0; 
+}
 .lang-switch img:hover { transform: scale(1.1); }
 
 h1 { margin-top: 20px; font-size: 2em; }
