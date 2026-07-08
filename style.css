@@ -14,7 +14,8 @@
 
 /* Header */
 header {
-  background: rgba(0, 100, 145, 0.5);
+  /*background: rgba(0, 100, 145, 0.5);*/
+  background-color: #006491;
   color: #fff;
   padding: 0 20px;
   display: flex;
@@ -305,12 +306,12 @@ nav a:hover {
 }
 
  /* Ajuste específico para o botão hamburger */
-  .hamburger, #menu-toggle {
+  /*.hamburger, #menu-toggle {
     width: 10px;
     height: 10px;
-    font-size: 20px; /* se for ícone via fonte */
+    font-size: 20px;
     padding: 4px;
-  }
+  }/*
 
 /* Layout mobile */
 @media screen and (max-width: 768px) {
@@ -319,7 +320,7 @@ nav a:hover {
     align-items: center;
     justify-content: space-between;
     height: auto;
-    padding: 14px 20px;
+    padding: 0px 20px; /* 14*/
   }
 
   /* keep logo at left and hamburger + nav on the right */
@@ -327,8 +328,13 @@ nav a:hover {
     order: 1; 
     margin: 0; 
   }
-  .menu-toggle { order: 2; margin: 0 12px; }
-  .menu-toggle { display: flex; }
+  .menu-toggle { 
+    order: 2; 
+    margin: 0 12px; 
+  }
+  .menu-toggle { 
+    display: flex; 
+  }
   .header-right { 
     order: 3; 
     display: flex; 
@@ -347,7 +353,9 @@ nav a:hover {
     }
 
   /* nav hidden by default on small screens, revealed with .show */
-  nav, nav ul { display: none; }
+  nav, nav ul { 
+    display: none; 
+  }
   nav.show, nav.show ul { 
     display: flex; 
     flex-direction: column; 
