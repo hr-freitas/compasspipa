@@ -14,8 +14,7 @@
 
 /* Header */
 header {
-  /*background: rgba(0, 100, 145, 0.5);*/
-  background-color: #006491;
+  background-color: #006491; /* cor sólida */
   color: #fff;
   padding: 0 20px;
   display: flex;
@@ -26,8 +25,6 @@ header {
   width: 100%;
   height: 60px;
   z-index: 1000;
-  /*transition: background 0.3s ease; */
-  /*backdrop-filter: blur(4px); */
 }
 
 html, body {
@@ -38,11 +35,11 @@ html, body {
 
 /* Logo */
 .logo img {
-  height: auto;                             /* mantém a proporção da imagem */
-  max-height: 72px;                         /* controla a altura máxima da logo */
+  height: auto;
+  max-height: 72px;
   object-fit: contain;
-  margin-top: 5px;                          /* controla altura da logo */
-  margin-left: 20px;                        /* controla a distância da logo em relação à borda esquerda */
+  margin-top: 5px;
+  margin-left: 20px;
 }
 
 /* Header right */
@@ -53,26 +50,25 @@ html, body {
   padding-right: 20px;
 }
 
-/* Hamburger (hidden by default, shown on small screens) */
+/* Hamburger */
 .menu-toggle {
   display: none;
   flex-direction: column;
   cursor: pointer;
-  gap: 4px;
+  gap: 3px;
   z-index: 2100;
 }
 
 .menu-toggle span {
-  width: 30px;
-  height: 4px;
+  width: 22px;
+  height: 3px;
   background: #fff;
   border-radius: 2px;
   display: block;
-  margin: 4px 0;
 }
 
 /* Navegação */
-.nav-wrapper {margin-right: 40px; }
+.nav-wrapper { margin-right: 40px; }
 
 nav a {
   color: #fff;
@@ -110,12 +106,11 @@ nav a:hover {
 .lang-switch img {
   width: 30px;
   height: 30px;
-  border-radius: 5px;
-  transition: transform 0.2s ease;
   border-radius: 3px;
+  transition: transform 0.2s ease;
 }
 
-.lang-switch img:hover {transform: scale(1.1); }
+.lang-switch img:hover { transform: scale(1.1); }
 
 /* Carousel */
 .carousel {
@@ -135,18 +130,16 @@ nav a:hover {
   left: 70%;
   border-radius: 20px;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-  background-position: 50% 50%;
+  background-position: center;
   background-size: cover;
   z-index: 100;
   transition: 1s;
-  
   display: flex;
   align-items: center;
   justify-content: center;
-  background-position: center;
 }
 
-/* Definição das imagens do carrossel */
+/* Imagens do carrossel */
 .carousel .list .item:nth-child(1) { background-image: url("images/foto1.jpg"); }
 .carousel .list .item:nth-child(2) { background-image: url("images/foto2.jpg"); }
 .carousel .list .item:nth-child(3) { background-image: url("images/foto3.jpg"); }
@@ -171,6 +164,17 @@ nav a:hover {
 .carousel .list .item:nth-child(n+7) {
   left: calc(67% + 800px);
   opacity: 0;
+}
+
+/* Arrows */
+.arrows {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  gap: 10px;
 }
 
 .arrows button {
@@ -203,7 +207,7 @@ nav a:hover {
   display: none;
 }
 
-.list .item:nth-child(2) .content {display: block; }
+.list .item:nth-child(2) .content { display: block; }
 
 .content .title {
   font-size: 100px;
@@ -258,20 +262,15 @@ nav a:hover {
   border-color: var(--secondary-color);
 }
 
-/* Arrows */
-.arrows {
-  position: absolute;
-  bottom: 20px;            /* posição no carrossel */
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 100;
-  display: flex;
-  gap: 10px;
-}
-
+/* Animações */
 @keyframes animate {
   from { opacity: 0; transform: translateY(100px); filter: blur(33px); }
   to   { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+@keyframes runningTime {
+  from { width: 0%; }
+  to   { width: 100%; }
 }
 
 /* Barra de tempo */
@@ -280,15 +279,10 @@ nav a:hover {
   z-index: 1000;
   width: 0%;
   height: 4px;
-  /*background-color: var(--primary-color);*/
+  background-color: var(--primary-color);
   left: 0;
   top: 0;
   animation: runningTime 7s linear forwards;
-}
-
-@keyframes runningTime {
-  from { width: 0%; }
-  to   { width: 100%; }
 }
 
 /* Responsivo */
@@ -305,14 +299,6 @@ nav a:hover {
   .content .btn button { padding: 10px 15px; font-size: 14px; }
 }
 
- /* Ajuste específico para o botão hamburger */
-  /*.hamburger, #menu-toggle {
-    width: 10px;
-    height: 10px;
-    font-size: 20px;
-    padding: 4px;
-  }/*
-
 /* Layout mobile */
 @media screen and (max-width: 768px) {
   header {
@@ -320,89 +306,64 @@ nav a:hover {
     align-items: center;
     justify-content: space-between;
     height: auto;
-    padding: 0px 20px; /* 14*/
+    padding: 0px 20px;
   }
 
-  /* keep logo at left and hamburger + nav on the right */
-  .logo { 
-    order: 1; 
-    margin: 0; 
-  }
-  .menu-toggle { 
-    order: 2; 
-    margin: 0 12px; 
-  }
-  .menu-toggle { 
-    display: flex; 
-  }
-  .header-right { 
-    order: 3; 
-    display: flex; 
-    align-items: center; 
-    gap: 10px; 
-  }
+  .logo { order: 1; margin: 0; }
+  .menu-toggle { order: 2; margin: 0 12px; display: flex; }
+  .header-right { order: 3; display: flex; align-items: center; gap: 10px; }
 
   .logo img { max-height: 72px; }
 
-  .menu-toggle span { 
-    width: 30px; 
-    height: 4px; 
-    background: #fff; 
-    border-radius: 2px; 
-    margin: 4px 0; 
-    }
-
-  /* nav hidden by default on small screens, revealed with .show */
-  nav, nav ul { 
-    display: none; 
-  }
-  nav.show, nav.show ul { 
-    display: flex; 
-    flex-direction: column; 
-    position: absolute; 
-    left: 0; 
-    right:0; 
-    top: 60px; 
-    background: #006491; 
-    z-index:2000; 
+  /* nav oculto por padrão no mobile */
+  nav, nav ul { display: none; }
+  nav.show, nav.show ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0; right: 0;
+    top: 60px;
+    background: #006491;
+    z-index: 2000;
   }
 
-  nav a { 
-    display: block; 
-    text-align: center; 
-    padding: 12px 16px; 
-    font-size: 1.05rem; 
+  nav a {
+    display: block;
+    text-align: center;
+    padding: 12px 16px;
+    font-size: 1.05rem;
   }
 
-  .lang-switch img { 
-    width: 30px; 
-    height: 30px; 
+  /* Bandeiras padronizadas */
+  .lang-switch img {
+    width: 30px;
+    height: 30px;
     border-radius: 8px;
   }
 
-  /* add a small inset so flags aren't flush to the right edge */
-  .lang-switch { 
-    margin-left: 6px; 
+  .lang-switch { margin-left: 6px; }
+
+  /* Ajuste do carrossel no mobile */
+  .carousel {
+    margin-top: 80px;
+    height: calc(100vh - 80px);
   }
 
-  /* adjust carousel top spacing to match header on small screens */
-  .carousel { 
-    margin-top: 80px; 
-    height: calc(100vh - 80px); 
+  .carousel .list .item {
+    width: 120px;
+    height: 180px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-70%);
   }
 
-  /* carousel captions left as in desktop rules; active slide controls visibility via existing selectors/JS */
-
-  @media screen and (max-width: 768px) {
   .list .item .content {
     left: 20px;
     width: calc(100% - 40px);
     text-align: center;
   }
 
-  .content .title, 
-  .content .name {
-    font-size: 32px;
+  .content .title, .content .name {
+    font-size: 28px;
     line-height: 1.2;
   }
 
@@ -417,37 +378,9 @@ nav a:hover {
     justify-content: center;
     margin-top: 15px;
   }
-}
 
-@media screen and (max-width: 768px) {
-  .carousel .list .item {
-    width: 120px;          /* reduz largura */
-    height: 180px;         /* reduz altura */
-    left: 50%;             /* centraliza melhor */
-    transform: translateX(-50%) translateY(-70%);
+  /* Ocultar barra de progresso no mobile */
+  .carousel .timeRunning {
+    display: none;
   }
-
-  .list .item .content {
-    width: calc(100% - 40px); /* ocupa quase toda a largura */
-    left: 20px;               /* margem lateral */
-    text-align: center;       /* centraliza texto */
-  }
-
-  .content .title, 
-  .content .name {
-    font-size: 28px;          /* menor para caber bem */
-  }
-
-  .content .des {
-    font-size: 14px;
-    margin: 10px auto;
-    max-width: 90%;
-  }
-
-  .content .btn {
-    display: flex;
-    justify-content: center;
-  }
-}
-
 }
