@@ -381,7 +381,9 @@ nav a:hover {
   }
 
   /* add a small inset so flags aren't flush to the right edge */
-  .lang-switch { margin-left: 6px; }
+  .lang-switch { 
+    margin-left: 6px; 
+  }
 
   /* adjust carousel top spacing to match header on small screens */
   .carousel { 
@@ -390,4 +392,63 @@ nav a:hover {
   }
 
   /* carousel captions left as in desktop rules; active slide controls visibility via existing selectors/JS */
+
+  @media screen and (max-width: 768px) {
+  .list .item .content {
+    left: 20px;
+    width: calc(100% - 40px);
+    text-align: center;
+  }
+
+  .content .title, 
+  .content .name {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .content .des {
+    font-size: 14px;
+    margin: 10px auto;
+    max-width: 90%;
+  }
+
+  .content .btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .carousel .list .item {
+    width: 120px;          /* reduz largura */
+    height: 180px;         /* reduz altura */
+    left: 50%;             /* centraliza melhor */
+    transform: translateX(-50%) translateY(-70%);
+  }
+
+  .list .item .content {
+    width: calc(100% - 40px); /* ocupa quase toda a largura */
+    left: 20px;               /* margem lateral */
+    text-align: center;       /* centraliza texto */
+  }
+
+  .content .title, 
+  .content .name {
+    font-size: 28px;          /* menor para caber bem */
+  }
+
+  .content .des {
+    font-size: 14px;
+    margin: 10px auto;
+    max-width: 90%;
+  }
+
+  .content .btn {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+
 }
