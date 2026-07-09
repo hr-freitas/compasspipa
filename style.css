@@ -280,7 +280,7 @@ nav a:hover {
   z-index: 1000;
   width: 0%;
   height: 4px;
-  background-color: var(--primary-color);
+  /*background-color: var(--primary-color);*/
   left: 0;
   top: 0;
   animation: runningTime 7s linear forwards;
@@ -449,6 +449,5 @@ nav a:hover {
     justify-content: center;
   }
 }
-
 
 }
