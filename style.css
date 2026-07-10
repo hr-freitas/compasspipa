@@ -263,16 +263,9 @@ nav a:hover {
 }
 
 /* Animações */
-/*@keyframes animate {
+@keyframes animate {
   from { opacity: 0; transform: translateY(100px); filter: blur(33px); }
   to   { opacity: 1; transform: translateY(0); filter: blur(0); }
-}*/
-
-@media screen and (max-width: 768px) {
-  @keyframes animate {
-    from { opacity: 0; transform: translateY(50px); filter: blur(5px); }
-    to   { opacity: 1; transform: translateY(0); filter: blur(0); }
-  }
 }
 
 @keyframes runningTime {
