@@ -52,10 +52,14 @@
   h1, h2, h3 { font-weight: 700; }
   .highlight { font-weight: 500; }
 
-  main {
+  /*main {
     flex: 1;
     padding: 20px;
     padding-bottom: 100px;
+  }*/
+
+  main {
+    flex: 1;
   }
 
   .logo img {
@@ -152,7 +156,10 @@
     margin-right: 12px;
   }
 
-  .lang-switch img { width: 30px; height: 30px; }
+  .lang-switch img { 
+    width: 30px; 
+    height: 30px; 
+    }
   }
 
   .lang-switch {
@@ -284,6 +291,18 @@
 
   body { padding-bottom: 0; }
   }
+
+  /* Desktop */
+@media (min-width: 769px) {
+  .lang-switch img {
+    width: 22px;   /* largura menor */
+    height: 16px;  /* altura proporcional */
+    object-fit: cover;
+    border-radius: 3px;
+    transition: transform 0.2s ease;
+  }
+}
+
   </style>
 </head>
 <body>
