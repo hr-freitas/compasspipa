@@ -30,7 +30,7 @@
       top: 0; left: 0;
       width: 100%;
       height: 60px;
-      z-index: 1000;
+      z-index: 1000;                                     /* Ensure header stays above other content */
     }
     .header-right {
       display: flex;                                       /* Use flexbox for better alignment of right-side header content */
@@ -62,7 +62,7 @@
       flex: 1;
       /* padding: 20px; */
     }
-
+    
     .logo img {
       height: auto;
       max-height: 72px;
@@ -81,7 +81,7 @@
     }
     nav ul li a {
       color: #fff;                                       /* Changed link color to white for better contrast */
-      text-decoration: none;                               /* Removed underline from links for a cleaner look */        
+      text-decoration: none;                               /* Removed underline from links for a cleaner look */       
       padding: 8px 20px;                                   /* Made links bold for better emphasis */
       border-radius: 5px;                                 /* Added border radius for rounded corners */
       transition: background 0.3s ease, color 0.3s ease;   /* Added transition for hover effect */
@@ -115,7 +115,7 @@
         flex-direction: column;                            /* Stack the navigation items vertically */
         background: #006491;                             /* Change background color for better contrast */
         position: absolute;                                /* Position the menu absolutely for better control */
-        top: 60px;                                         /* Position the menu below the header */
+        top: 80px;                                         /*  */
         right: 0;                                          /* Align the menu to the right */
         width: 100%;                                       /* Make the menu take full width of the screen */
       }
@@ -126,10 +126,17 @@
       .menu-toggle {
         display: flex;                                     /* Show the menu toggle button on smaller screens */
       }
-      /* show nav when JS toggles .show */
-      nav.show, nav.show ul { display: flex; flex-direction: column; position: absolute; left:0; right:0; top:60px; background: #006491; z-index:2000; }
+
+      nav.show ul { 
+      display: flex; 
+      flex-direction: column; }
+
+      nav.show ul { 
+        display: flex; 
+        flex-direction: column; 
+      }
     }
-   
+
     .lang-switch {
       display: flex;                                         /* Use flexbox for better alignment of language switch buttons */
       gap: 10px;                                             /* espaçamento entre bandeiras */
@@ -284,12 +291,15 @@
     }
 
     /* Mobile adjustments for about page */
-    @media (max-width: 768px) {
+    @media (
+      max-width: 768px) 
+      {
       header { 
-        padding: 10px 12px; 
+        padding: 14px 16px; 
         align-items: center; 
       }
-      .logo img { max-height: 56px; 
+      .logo img { 
+        max-height: 72px; 
         margin-left: 12px; 
       }
       .menu-toggle { 
@@ -297,23 +307,25 @@
         margin: 0 8px; 
       }
       .header-right { 
-      gap: 12px; 
-      margin-right: 12px; 
+        gap: 12px; 
+        margin-right: 12px; 
       }
-      .lang-switch { 
-        display: flex; 
-        justify-content: space-between; 
+      .lang-switch { display: 
+        flex; justify-content: space-between; 
         width: 120px; 
         gap: 8px; 
-        margin-right: 12px; 
+        margin-right: 15px; 
       }
       .sobre-texto { 
         padding: 0 18px; 
         margin: 0 auto 30px auto; 
         max-width: 100%; 
+        }
+      body { 
+        padding-bottom: 0; 
       }
-      body { padding-bottom: 0; }
-      .sobre-texto p { font-size: 16px; 
+      .sobre-texto p { 
+        font-size: 16px; 
         line-height: 1.5; 
       }
       footer { 
@@ -323,8 +335,7 @@
         padding: 16px; 
         gap: 12px; 
         flex-direction: column; 
-        align-items: center; 
-        margin-bottom: 0; 
+        align-items: center; margin-bottom: 0; 
       }
     }
   </style>
@@ -432,6 +443,7 @@
   <a href="https://wa.me/5584991202411" class="whatsapp-button" target="_blank">
   <img src="icons/social.png" alt="WhatsApp">
   </a>
+  
   <script src="app.js"></script>
 
 <footer>

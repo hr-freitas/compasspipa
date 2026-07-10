@@ -115,7 +115,7 @@
         flex-direction: column;                            /* Stack the navigation items vertically */
         background: #006491;                             /* Change background color for better contrast */
         position: absolute;                                /* Position the menu absolutely for better control */
-        top: 60px;                                         /* Position the menu below the header */
+        top: 80px;                                         /*  */
         right: 0;                                          /* Align the menu to the right */
         width: 100%;                                       /* Make the menu take full width of the screen */
       }
@@ -126,10 +126,17 @@
       .menu-toggle {
         display: flex;                                     /* Show the menu toggle button on smaller screens */
       }
-      /* show nav when JS toggles .show */
-      nav.show, nav.show ul { display: flex; flex-direction: column; position: absolute; left:0; right:0; top:60px; background: #006491; z-index:2000; }
+
+      nav.show ul { 
+      display: flex; 
+      flex-direction: column; }
+
+      nav.show ul { 
+        display: flex; 
+        flex-direction: column; 
+      }
     }
-   
+
     .lang-switch {
       display: flex;                                         /* Use flexbox for better alignment of language switch buttons */
       gap: 10px;                                             /* espaçamento entre bandeiras */
@@ -284,15 +291,23 @@
     }
 
     /* Mobile adjustments for about page */
-    @media (max-width: 768px) {
-      header { padding: 10px 12px; 
-        align-items: center; }
-      .logo img { max-height: 56px; 
+    @media (
+      max-width: 768px) 
+      {
+      header { 
+        padding: 14px 16px; 
+        align-items: center; 
+      }
+      .logo img { 
+        max-height: 72px; 
         margin-left: 12px; 
       }
-      .menu-toggle { display: flex; 
-      margin: 0 8px; }
-      .header-right { gap: 12px; 
+      .menu-toggle { 
+        display: flex; 
+        margin: 0 8px; 
+      }
+      .header-right { 
+        gap: 12px; 
         margin-right: 12px; 
       }
       .lang-switch { display: 
@@ -416,7 +431,7 @@
 
       form.addEventListener("submit", (e) => {
         e.preventDefault();                                                   // impede envio real
-        alert("Mensagem enviada com sucesso!");
+        alert("Mensaje enviada com êxito!");
         form.reset();                                                         // limpa os campos
         modal.style.display = "none";                                         // fecha o modal
       });
@@ -427,6 +442,7 @@
   <a href="https://wa.me/5584991202411" class="whatsapp-button" target="_blank">
   <img src="icons/social.png" alt="WhatsApp">
   </a>
+  
   <script src="app.js"></script>
 
 <footer>

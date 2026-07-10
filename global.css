@@ -61,7 +61,11 @@ nav ul li a {
 nav ul li a:hover,
 nav ul li a:active { background: #24a2dd; }
 
-.menu-toggle { display: none; flex-direction: column; cursor: pointer; }
+.menu-toggle { 
+  display: none; 
+  flex-direction: column; 
+  cursor: pointer; 
+}
 
 /* Mobile */
 @media (max-width: 768px) {
@@ -129,7 +133,8 @@ nav ul li a:active { background: #24a2dd; }
     align-items: center; 
   }
   .logo img { 
-    max-height: 72px; 
+    max-height: 72px;
+    margin-left: 12px; 
   }
   .menu-toggle span { 
     width: 30px; 
