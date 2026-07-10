@@ -2,57 +2,60 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Términos y Condiciones</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Término y Condiciones</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="contact.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
     body {
-      font-family: "Montserrat", sans-serif;
-      font-weight: 400;                                             /* Normal text */
-      margin: 0;                                                    /* Removed default margin for better layout control */
-      background: #f7f6f6;                                        /* Changed background color to a light gray for better contrast */
-      padding-top: 80px;                                            /* Added padding to the top to prevent content from being hidden behind the header */
-    }
-
-    h1, h2, h3 {
-      font-weight: 700;                                             /* Negrito para títulos */
-    }
-    
-    .highlight {
-      font-weight: 500;                                             /* Medium para destaques */
-    }
-
-    main {
-      flex: 1;
-      padding: 20px;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      padding-top: 80px;
     }
 
     header {
       background: #006491;
       color: #fff;
-      padding: 0 20px; /* 10 12 */
+      padding: 0 20px;
+      display: flex;
       align-items: center;
       justify-content: space-between;
-      display: flex;
       position: fixed;
       top: 0; left: 0;
       width: 100%;
       height: 60px;
       z-index: 1000;
     }
-
     .header-right {
-      display: flex;                                                /* Use flexbox for better alignment of right-side header content */
-      align-items: center;                                          /* Center right-side header content vertically */
-      gap: 20px;                                                    /* Added gap between right-side header items for better spacing */
-      margin-right: 60px;                                           /* Added margin to the right of the right-side header content for better spacing */
+      display: flex;                                       /* Use flexbox for better alignment of right-side header content */
+      align-items: center;                                 /* Center right-side header content vertically */
+      gap: 20px;                                           /* Added gap between right-side header items for better spacing */
+      margin-right: 60px;                                  /* Added margin to the right of the right-side header content for better spacing */
     }
 
-    .logo {
-      margin-right: 0px;                                            /* Added margin to the right of the logo for better spacing */
+    html {background: #f7f6f6;}
+
+    html, body {
+      min-height: 100vh;          /* ocupa 100% da altura da viewport */
+      margin: 0;               /* remove margens padrão */
+      display: flex;              /* usa flexbox para layout */
+      flex-direction: column;     /* organiza elementos em coluna */
+      overflow: auto;             /* permite rolagem em mobile */
+    }
+
+    h1, h2, h3 {font-weight: 700;}
+    
+    .highlight {font-weight: 500;}
+
+    main {
+      flex: 1;
+      padding: 20px;
+      padding-bottom: 100px;            
     }
 
     .logo img {
@@ -60,105 +63,139 @@
       max-height: 72px;
       object-fit: contain;
       margin-top: 5px;
+      /*margin: 0 10px 0 0;*/
       margin-left: 20px;
     }
 
     nav ul {
       list-style: none;  
-      margin: 0;                                                    /* Removed default list styling for a cleaner look */
-      padding: 0 30px;                                             /* Removed default padding for better layout control */
-      display: flex;                                                /* Use flexbox for better alignment of navigation items */
-      gap: 0px;                                                    /* Added gap between navigation items for better spacing */
+      margin: 0;
+      padding: 0 30px;
+      display: flex;
+      gap: 0px;
     }
-
     nav ul li a {
-      color: #fff;                                                /* Changed link color to white for better contrast */
-      text-decoration: none;                                        /* Removed underline from links for a cleaner look */
-      font-weight: bold;         
-      padding: 8px 20px;                                            /* Made links bold for better emphasis */
-      border-radius: 15px;                                          /* Added border radius for rounded corners */
-      transition: background 0.3s ease, color 0.3s ease;            /* Added transition for hover effect */
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 20px;
+      border-radius: 5px;
+      transition: background 0.3s ease, color 0.3s ease;
     }
-
     nav ul li a:hover,
     nav ul li a:active {  
-      background: #36b3ec;                                        /* Changed button background color on hover for better visual feedback */
+      background: #36b3ec;                               /* Changed button background color on hover for better visual feedback */
     }
 
     /* Botão hamburger para dispositivos móveis */
     .menu-toggle {
-      display: none;                                                /* Hide the menu toggle button by default */
-      flex-direction: column;                                       /* Stack the lines vertically */
-      cursor: pointer;                                              /* Change cursor to pointer for better UX */
+      display: none;                                       /* Hide the menu toggle button by default */
+      flex-direction: column;                              /* Stack the lines vertically */
+      cursor: pointer;                                     /* Change cursor to pointer for better UX */
+      z-index: 2100;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      border-radius: 2px;
+      margin: 4px 0;
     }
 
     /* Responsividade para dispositivos móveis */
     @media (max-width: 768px) {
-      nav ul {
-        display: none;                                              /* Hide the navigation menu on smaller screens */
-        flex-direction: column;                                     /* Stack the navigation items vertically */
-        background: #006491;                                      /* Change background color for better contrast */
-        position: absolute;                                         /* Position the menu absolutely for better control */
-        top: 60px;                                                  /* Position the menu below the header */
-        right: 0;                                                   /* Align the menu to the right */
-        width: 100%;                                                /* Make the menu take full width of the screen */
-      }
-      nav ul li {
-        text-align: center;                                         /* Center the navigation items */
-        padding: 10px 0;                                            /* Add padding for better spacing */
-      }
-      .menu-toggle {
-        display: flex;                                              /* Show the menu toggle button on smaller screens */
-      }
-    }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;       /* centraliza horizontalmente */
+    justify-content: flex-start;
+    background: #006491;
+    position: absolute;
+    top: 80px;                 /* abaixo do header */
+    right: 100px;                   /* ajusta a posição à direita */
+    left: 0;
+    width: 100%;
+  }
+
+  nav ul li {
+    width: 100%;               /* ocupa toda a largura */
+    display: flex;             /* usa flex para alinhar */
+    justify-content: center;   /* centraliza o link dentro do li */
+    padding: 10px 0;
+  }
+
+  nav ul li a {
+    display: flex;
+    margin: 0 auto;
+    padding: 10px 20px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav.show, nav.show ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50px;                 /* mesmo valor do nav ul */
+    background: #006491;
+    z-index: 2000;
+    align-items: center;       /* garante centralização */
+  }
+}
    
     .lang-switch {
-      display: flex;                                                  /* Use flexbox for better alignment of language switch buttons */
-      gap: 10px;                                                      /* espaçamento entre bandeiras */
+      display: flex;                                         /* Use flexbox for better alignment of language switch buttons */
+      gap: 10px;                                             /* espaçamento entre bandeiras */
     }
 
     .lang-switch button {
-      background: none;                                               /* Remove background for a cleaner look */
-      border: none;                                                   /* Remove border for a cleaner look */
-      cursor: pointer;                                                /* Change cursor to pointer for better UX */
-      padding: 0;                                                     /* Remove padding for better alignment */
+      background: none;                                      /* Remove background for a cleaner look */
+      border: none;                                          /* Remove border for a cleaner look */
+      cursor: pointer;                                       /* Change cursor to pointer for better UX */
+      padding: 0;                                            /* Remove padding for better alignment */
     }
 
     .lang-switch img {
-      width: 30px;                                                    /* tamanho das bandeiras */
-      height: 20px;                                                   /* tamanho das bandeiras */
-      object-fit: cover;                                              /* Ensure flags maintain their aspect ratio */
-      border-radius: 3px;                                             /* Cantos levemente arredondados */
-      transition: transform 0.2s ease;                                /* Added transition for hover effect */
+      width: 30px;                                           /* width flags */
+      height: 20px;                                          /* height flags */
+      object-fit: cover;                                     /* Ensure flags maintain their aspect ratio */
+      border-radius: 3px;                                    /* Cantos levemente arredondados */
+      transition: transform 0.2s ease;                       /* Added transition for hover effect */
     }
 
     .lang-switch img:hover {
-      transform: scale(1.1);                                          /* Efeito de zoom ao passar o mouse */
+      transform: scale(1.1);                                 /* Efeito de zoom ao passar o mouse */
     }
 
     h1 {
-      margin-top: 20px;                                             /* Added margin to the top of the heading for better spacing */
-      font-size: 2em;                                               /* Increased font size for better visibility */
+      margin-top: 20px;                                    /* Added margin to the top of the heading for better spacing */
+      font-size: 2em;                                      /* Increased font size for better visibility */
     }
 
     /* Botão do WhatsApp */
     .whatsapp-button {
-      position: fixed;                                                /* fica fixo na tela */
-      bottom: 20px;                                                   /* distância da borda inferior */
-      right: 20px;                                                    /* distância da borda direita */
-      z-index: 1000;                                                  /* fica acima dos outros elementos */
+      position: static;                                       /* keep in page flow */
+      align-self: flex-end;                                   /* align to the right */
+      margin: 20px 20px 0 0;                                  /* spacing above footer */
+      display: block;
+      z-index: 2000;                                          /* keep above other elements if needed */
     }
 
     .whatsapp-button img {
-      width: 60px;                                                    /* tamanho do ícone */
+      width: 60px;                                            /* tamanho do ícone */
       height: 60px;
-      border-radius: 50%;                                             /* deixa o ícone redondo */
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);                        /* sombra suave */
+      border-radius: 50%;                                     /* deixa o ícone redondo */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);                /* sombra suave */
       transition: transform 0.3s ease;
     }
 
     .whatsapp-button img:hover {
-      transform: scale(1.1);                                          /* efeito de zoom ao passar o mouse */
+      transform: scale(1.1);                                  /* efeito de zoom ao passar o mouse */
     }
 
     /* Footer */
@@ -166,16 +203,17 @@
       background: #006491;
       color: #fff;
       display: flex;
-      flex-direction: row;                                            /* força horizontal */
-      justify-content: space-between;                                 /* distribui esquerda, centro e direita */
-      align-items: flex-start;                                        /* alinha ao topo */
+      flex-direction: row;                                    /* força horizontal */
+      justify-content: flex-start;                         /* distribui esquerda, centro e direita */
+      align-items: flex-start;                                /* alinha ao topo */
       padding: 20px 10%;
-      border-top: 2px solid #ddd;                                   /* linha separadora acima */
+      border-top: 2px solid #ddd;                           /* linha separadora acima */
+      gap: 250px;          /* espaço entre os blocos */
     }
 
     footer div {
       margin: 0 10px;
-      flex: 0 0 auto;                                                 /* impede que cresçam verticalmente */
+      flex: 0 0 auto;                                         /* impede que cresçam verticalmente */
     }
 
     .footer-left { text-align: left; }
@@ -185,8 +223,8 @@
     .footer-center {
       text-align: left;
       display: flex;
-      flex-direction: column;                                         /* empilha os links */
-      gap: 6px;                                                       /* espaço entre eles */
+      flex-direction: column;                                 /* empilha os links */
+      gap: 6px;                                               /* espaço entre eles */
     }
 
     .footer h3 {
@@ -197,14 +235,14 @@
     }
 
     .footer-center a {
-      display: block;                                                 /* cada link ocupa uma linha */
+      display: block;                                         /* cada link ocupa uma linha */
       color: #fff;
       text-decoration: none;
       margin: 2px 0;
     }
 
     .footer-center a:hover {
-      text-decoration: underline;                                     /* opcional: destaque ao passar o mouse */
+      text-decoration: underline;                             /* opcional: destaque ao passar o mouse */
     }
 
     .footer-right img {
@@ -217,21 +255,24 @@
       text-align: left;
       margin:  5px 0;
       line-height: 1.4;
-      font-weight: 400;                                               /* Regular para textos */
+      font-weight: 400;                                       /* Regular para textos */
     }
 
     /* Responsividade */
     @media (max-width: 768px) {
     footer {
-      flex-direction: column;                                       /* empilha os blocos no celular */
+      position: static;                                     /* allow footer to scroll with content */
+      bottom: auto;
+      width: auto;
+      flex-direction: column;                               /* empilha os blocos no celular */
       text-align: center;
+      padding: 20px 16px;
       }
     .footer-left,
     .footer-center,
     .footer-right {
       margin: 10px 0;
       text-align: center;
-
 
       flex: 1;
       margin: 0 10px;
@@ -245,19 +286,67 @@
       margin-top: 0px;
       width: 100%;
       background-color: #006494;
-      padding: 5px 0;
+      padding: 2px 0;
     }
 
     .sobre-texto {
       max-width: 800px;
-      margin: 0 auto 70px auto;                                       /* centraliza e dá espaço antes do rodapé */
+      margin: 0 auto 70px auto;                               /* centraliza e dá espaço antes do rodapé */
       text-align: justify;
     }
 
     .sobre-texto p {
-      margin-bottom: 20px;                                            /* espaço entre os parágrafos */
-      line-height: 1.6;                                               /* altura da linha para leitura confortável */
+      margin-bottom: 20px;                                    /* espaço entre os parágrafos */
+      line-height: 1.6;                                       /* altura da linha para leitura confortável */
       color: #333;
+    }
+
+    /* Mobile adjustments for about page */
+    @media (max-width: 768px) {
+      header { 
+        padding: 10px 12px; 
+        align-items: center; 
+      }
+      .logo img { 
+        max-height: 72px; 
+        margin-left: 0px; 
+        }
+      .menu-toggle { 
+        display: flex; 
+        margin: 0 8px; 
+      }
+      .header-right { 
+        gap: 12px; 
+        margin-right: 12px; 
+      }
+      .lang-switch { 
+        display: flex; 
+        justify-content: space-between; 
+        width: 120px; 
+        gap: 8px; 
+        margin-right: 12px; 
+      }
+      .sobre-texto { 
+        padding: 0 18px; 
+        margin: 0 auto 30px auto; 
+        max-width: 100%; 
+      }
+      body { 
+        padding-bottom: 0; 
+      }
+      .sobre-texto p { 
+        font-size: 16px; 
+        line-height: 1.5; 
+      }
+      footer { 
+        position: static !important; 
+        bottom: auto; width: auto; 
+        padding: 16px; 
+        gap: 12px; 
+        flex-direction: 
+        column; align-items: center; 
+        margin-bottom: 0; 
+        }
     }
   </style>
 </head>
@@ -312,7 +401,7 @@
       Reembolso parcial (50%): entre 2 y 1 días antes de la excursión.
       Cancelaciones con menos de 24 horas no generan reembolso.
 
-En caso de condiciones meteorológicas adversas o motivos de fuerza mayor, la excursión podrá ser reprogramada o reembolsada íntegramente.
+      En caso de condiciones meteorológicas adversas o motivos de fuerza mayor, la excursión podrá ser reprogramada o reembolsada íntegramente.
     </p>
   <h3>4. Responsabilidades del Cliente</h3>
     <p>
@@ -350,24 +439,24 @@ En caso de condiciones meteorológicas adversas o motivos de fuerza mayor, la ex
     <div class="modal-content">
       <span class="close">&times;</span>
       <form class="contact-form" action="enviar.php" method="post">
-        <h2>DEIXE-NOS UMA MENSAGEM</h2>
-        <label for="name">Nome</label>
+        <h2>DEJA NOS UN MENSAJEN</h2>
+        <label for="name">Nombre</label>
         <input type="text" id="name" name="name" autocomplete="name" required>
 
         <label for="email">Email</label>
         <input type="email" id="email" name="email" autocomplete="email" required>
 
-        <label for="phone">Telefone / WhatsApp</label>
+        <label for="phone">Teléfone / WhatsApp</label>
         <input type="text" id="phone" name="phone" autocomplete="tel">
 
-        <label for="message">Mensagem</label>
+        <label for="message">Mensajen</label>
         <textarea id="message" name="message" rows="5" autocomplete="off" required></textarea>
 
         <button type="submit">ENVIAR</button>
       </form>
     </div>
   </div>
-  <script>
+<script>
   document.addEventListener("DOMContentLoaded", () => {
     const openBtn = document.getElementById("openContact");
     const modal = document.getElementById("contactModal");
@@ -392,7 +481,7 @@ En caso de condiciones meteorológicas adversas o motivos de fuerza mayor, la ex
 
       form.addEventListener("submit", (e) => {
         e.preventDefault();                                                   // impede envio real
-        alert("Mensagem enviada com sucesso!");
+        alert("Mensagem enviada con êxito!");
         form.reset();                                                         // limpa os campos
         modal.style.display = "none";                                         // fecha o modal
       });
@@ -403,6 +492,7 @@ En caso de condiciones meteorológicas adversas o motivos de fuerza mayor, la ex
   <a href="https://wa.me/5584991202411" class="whatsapp-button" target="_blank">
   <img src="icons/social.png" alt="WhatsApp">
   </a>
+  <script src="app.js"></script>
 
 <footer>
   <div class="footer-left">
@@ -414,13 +504,13 @@ En caso de condiciones meteorológicas adversas o motivos de fuerza mayor, la ex
   </div>
 
   <div class="footer-center">
-    <h3>Informaciones</h3>
+    <h3>Informações</h3>
     <a href="termos_es.html">Términos y Condiciones</a>
     <a href="politicas_es.html">Política de Privacidad</a>
   </div>
 
   <div class="footer-right">
-    <h3>Formas de Pagamento</h3>
+    <h3>Formas de Pago</h3>
     <img src="icons/google-verificado.png" alt="Google Verificado" style="height: 20px; width: 60px;">
     <img src="icons/ssl-logos_orig.png" alt="Site Confiável">
     <img src="icons/pix-icone.png" alt="Pix">
@@ -428,9 +518,9 @@ En caso de condiciones meteorológicas adversas o motivos de fuerza mayor, la ex
   </div>
 </footer>
 
-<div class="footer-creditos">
+<!--<div class="footer-creditos">
   Desenvolvido por hr.freitas
-</div>
+</div>*-->
 
 </body>
 </html>
