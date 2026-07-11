@@ -60,8 +60,8 @@ html, body {
 }
 
 .menu-toggle span {
-  width: 22px;
-  height: 3px;
+  width: 30px;
+  height: 4px;
   background: #fff;
   border-radius: 2px;
   display: block;
@@ -382,5 +382,18 @@ nav a:hover {
   /* Ocultar barra de progresso no mobile */
   .carousel .timeRunning {
     display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+ /* Ajuste do tamanho do hambúrguer */
+  .menu-toggle span {
+    width: 16px; 
+    height: 2px; 
+  }
+
+  .menu-toggle {
+    gap: 2px;   
+    transform: scale(0.9);
   }
 }
