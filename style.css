@@ -98,6 +98,8 @@ nav a:hover {
   justify-content: center;
 
   flex-wrap: nowrap;
+  min-width: 80px;
+  justify-content: flex-end;
 }
 
 .lang-switch button {
