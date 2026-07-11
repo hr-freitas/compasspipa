@@ -319,6 +319,11 @@ nav a:hover {
     height: 4px; 
     }
 
+     .menu-toggle {
+    gap: 6px;      /* mantém o espaçamento */
+    transform: none; /* remove o scale */
+  }
+
 
   .logo { order: 1; margin: 0; }
   .menu-toggle { order: 2; margin: 0 12px; display: flex; }
