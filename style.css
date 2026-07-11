@@ -387,21 +387,10 @@ nav a:hover {
   }
 }
 
-/*@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
  /* Ajuste do tamanho do hambúrguer */
-  /*.menu-toggle span {
-    width: 16px; 
-    height: 2px; 
+  .menu-toggle span {
+    width: 30px; 
+    height: 4px; 
+    }
   }
-
-  .menu-toggle {
-    gap: 2px;   
-    transform: scale(0.9);
-  }
-}*/
-
-
-
-
-
-
