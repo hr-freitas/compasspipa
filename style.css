@@ -385,7 +385,8 @@ nav a:hover {
     justify-content: space-between;
     width: 120px;
     gap: 10px;
-    margin-right: 2px;
+    margin-right: 0;
+    margin-left: 2px;
   }
 
   /* adjust carousel top spacing to match header on small screens */
