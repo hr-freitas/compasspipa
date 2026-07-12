@@ -115,6 +115,7 @@ nav ul li a:active { background: #24a2dd; }
   .card p { 
     font-size: 1rem; 
     margin: 0 12px 12px 12px; 
+    text-align: left;
   }
   .info-passeio { 
     font-size: 0.95rem; 
