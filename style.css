@@ -376,6 +376,13 @@ nav a:hover {
   /* add a small inset so flags aren't flush to the right edge */
   .lang-switch { 
     margin-left: 6px; 
+
+
+    display: flex;
+    justify-content: space-between;
+    width: 120px;
+    gap: 10px;
+    margin-right: 12px;
   }
 
   /* adjust carousel top spacing to match header on small screens */
