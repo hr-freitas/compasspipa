@@ -96,7 +96,7 @@ nav a:hover {
 .lang-switch {
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: right;
 }
 
 .lang-switch button {
@@ -335,7 +335,11 @@ nav a:hover {
     gap: 10px; 
   }
 
-  .logo img { max-height: 72px; }
+  .logo img { 
+    max-height: 72px;
+    
+    margin-left: 5px;
+  }
 
   .menu-toggle span { 
     width: 30px; 
@@ -377,12 +381,11 @@ nav a:hover {
   .lang-switch { 
     margin-left: 6px; 
 
-
     display: flex;
     justify-content: space-between;
     width: 120px;
     gap: 10px;
-    margin-right: 12px;
+    margin-right: 2px;
   }
 
   /* adjust carousel top spacing to match header on small screens */
