@@ -9,10 +9,17 @@
   height: 100%;
   overflow: auto;
   background-color: rgba(0,0,0,0.6); /* fundo escuro translúcido */
+
+   overflow-x: hidden;
+  overflow-y: auto;
+  inset: 0;
 }
 
 /* Conteúdo do modal */
 .modal-content {
+
+  box-sizing: border-box;
+
   background-color: #fff;
   margin: 5% auto;
   padding: 30px;
@@ -22,13 +29,15 @@
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   animation: fadeIn 0.3s ease;
   position: relative;
-  overflow: visible;
+  /*overflow: visible;*/
   z-index: 10000;
+
+ 
 }
 
 @media screen and (max-width: 768px) {
   .modal-content {
-    width: 95%;          /* ocupa quase toda a largura, mas não 100% */
+    width: 90%;          /* ocupa quase toda a largura, mas não 100% */
     max-width: 400px;    /* limite para não ficar exagerado */
     margin: 20px auto;   /* auto centraliza na horizontal */
     padding: 20px;       /* ajuste interno */
@@ -80,12 +89,15 @@
 
 .contact-form input,
 .contact-form textarea {
+  max-width: 500px;
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 14px;
   transition: border-color 0.3s;
+
+  box-sizing: border-box;
 }
 
 .contact-form input:focus,
