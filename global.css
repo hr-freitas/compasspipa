@@ -288,6 +288,19 @@ footer div { margin: 0 10px; flex: 0 0 auto; }
 
 p { text-align: center; margin: 5px 0; line-height: 1.4; font-weight: 400; }
 
+/* Correção: descrições dos passeios alinhadas à esquerda no desktop */
+@media (min-width: 769px) {
+  .card p {
+    text-align: left;
+  }
+
+  /* Footer coluna esquerda */
+  .footer-left,
+  .footer-left p {
+    text-align: left;
+  }
+}
+
 @media (max-width: 768px) {
   footer {
     flex-direction: column;
