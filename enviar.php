@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             try {
                 $mail->isSMTP();
-                $mail->Host = 'contato@compasspipa.com.br';
+                $mail->Host = 'mail@compasspipa.com.br';
                 $mail->SMTPAuth = true;
                 $mail->Username = 'contato@compasspipa.com.br';
                 $mail->Password = '#2Umburan@';
