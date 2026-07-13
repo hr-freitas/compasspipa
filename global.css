@@ -271,7 +271,7 @@ footer {
 
 footer div { margin: 0 10px; flex: 0 0 auto; }
 .footer-left { text-align: left; }
-.footer-center { text-align: center; }
+.footer-center { text-align: left; }
 .footer-right { text-align: right; }
 
 .footer-center {
