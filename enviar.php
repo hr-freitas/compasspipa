@@ -18,13 +18,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             try {
                 $mail->isSMTP();
-                $mail->Host = 'mail.seudominio.com';
+                $mail->Host = 'contato@compasspipa.com.br';
                 $mail->SMTPAuth = true;
-                $mail->Username = 'reservas@seudominio.com';
-                $mail->Password = 'SUA_SENHA';
+                $mail->Username = 'contato@compasspipa.com.br';
+                $mail->Password = '#2Umburan@';
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                 $mail->Port = 587;
-                $mail->setFrom('reservas@seudominio.com', 'Site CompassPipa');
+                $mail->setFrom('contato@compasspipa.com.br', 'Site CompassPipa');
                 $mail->addAddress($destinatario);
                 $mail->isHTML(false);
                 $mail->Subject = $assunto;
